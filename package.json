@@ -1,5 +1,5 @@
 {
-  "name": "lib",
+  "name": "@e6nlaq/library",
   "module": "index.ts",
   "type": "module",
   "private": true,
