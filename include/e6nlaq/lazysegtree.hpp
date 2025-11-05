@@ -4,12 +4,11 @@
 #ifndef E6NLAQ_LAZYSEGTREE_HPP
 #define E6NLAQ_LAZYSEGTREE_HPP 1
 
-#include <algorithm>
 #include <cassert>
 #include <functional>
 #include <vector>
 
-#include "e6nlaq/internal_bit"
+#include "e6nlaq/internal/bit.hpp"
 
 namespace e6nlaq {
 

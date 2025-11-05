@@ -9,7 +9,7 @@
 #include <limits>
 #include <vector>
 
-#include "e6nlaq/internal_queue"
+#include "e6nlaq/internal/queue.hpp"
 
 namespace e6nlaq {
 

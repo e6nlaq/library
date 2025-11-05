@@ -5,15 +5,11 @@
 #define E6NLAQ_INTERNAL_TYPE_TRAITS_HPP 1
 
 #include <cassert>
-#include <numeric>
 #include <type_traits>
 
 namespace e6nlaq {
 
 namespace internal {
-
-// @e6nlaq/library / (C) 2025 e6nlaq
-// This file is a fork of AtCoder Library.
 
 #ifndef _MSC_VER
 template <class T>

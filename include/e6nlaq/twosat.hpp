@@ -7,7 +7,7 @@
 #include <cassert>
 #include <vector>
 
-#include "e6nlaq/internal_scc"
+#include "e6nlaq/internal/scc.hpp"
 
 namespace e6nlaq {
 

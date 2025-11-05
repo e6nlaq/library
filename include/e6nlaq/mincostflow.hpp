@@ -9,8 +9,7 @@
 #include <limits>
 #include <vector>
 
-#include "e6nlaq/internal_csr"
-#include "e6nlaq/internal_queue"
+#include "e6nlaq/internal/csr.hpp"
 
 namespace e6nlaq {
 
