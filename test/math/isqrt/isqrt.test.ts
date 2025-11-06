@@ -1,27 +1,30 @@
 import { beforeAll, describe, expect, test } from "bun:test";
 import { faker } from "@faker-js/faker";
-import { compile, run_case } from "../util";
+import { compile, run_cases, randomCases } from "@/util";
 
 beforeAll(async () => {
 	await compile(import.meta.dir, "isqrt.cpp");
 });
 
 async function run(n: bigint) {
-	if (-(10n ** 18n) > n || n > 10n ** 18n) {
-		throw new Error(`Out of range: ${n}`);
-	}
+	return (await runs([n]))[0];
+}
 
-	const out = await run_case(import.meta.dir, [n]);
-
-	return BigInt(out[0]);
+async function runs(inputs: bigint[]) {
+	const outs = await run_cases(import.meta.dir, inputs.map((n) => [n]));
+	return outs.map((out) => BigInt(out[0]));
 }
 
 // Tests
 
 test.concurrent("小さい平方数", async () => {
+	const cases: bigint[] = [];
+	const ans: bigint[] = [];
 	for (let i = 1n; i <= 500n; ++i) {
-		expect(await run(i * i)).toBe(i);
+		cases.push(i * i);
+		ans.push(i);
 	}
+	expect(await runs(cases)).toStrictEqual(ans);
 });
 
 test.concurrent("負", async () => {
@@ -35,15 +38,18 @@ test.concurrent.each([
 	expect(await run(n)).toBe(ans);
 });
 
-const randomCases = 500;
 describe.each([10, 10 ** 8])("random(min: %i)", (min) => {
 	test.concurrent(
 		"平方数",
 		async () => {
+			const cases: bigint[] = [];
+			const ans: bigint[] = [];
 			for (let _ = 0; _ < randomCases; _++) {
 				const n = faker.number.bigInt({ min, max: 10 ** 9 });
-				expect(await run(n * n)).toBe(n);
+				cases.push(n * n);
+				ans.push(n);
 			}
+			expect(await runs(cases)).toStrictEqual(ans);
 		},
 		{ timeout: 15000 },
 	);
@@ -51,10 +57,14 @@ describe.each([10, 10 ** 8])("random(min: %i)", (min) => {
 	test.concurrent.each([1n, 2n, 3n, 4n])(
 		"平方数 -%p",
 		async (x) => {
+			const cases: bigint[] = [];
+			const ans: bigint[] = [];
 			for (let _ = 0; _ < randomCases; _++) {
 				const n = faker.number.bigInt({ min, max: 10 ** 9 });
-				expect(await run(n * n - x)).toBe(n - 1n);
+				cases.push(n * n - x);
+				ans.push(n - 1n);
 			}
+			expect(await runs(cases)).toStrictEqual(ans);
 		},
 		{ timeout: 15000 },
 	);
@@ -62,10 +72,14 @@ describe.each([10, 10 ** 8])("random(min: %i)", (min) => {
 	test.concurrent.each([1n, 2n, 3n, 4n])(
 		"平方数 +%p",
 		async (x) => {
+			const cases: bigint[] = [];
+			const ans: bigint[] = [];
 			for (let _ = 0; _ < randomCases; _++) {
 				const n = faker.number.bigInt({ min, max: 10 ** 9 });
-				expect(await run(n * n + x)).toBe(n);
+				cases.push(n * n + x);
+				ans.push(n);
 			}
+			expect(await runs(cases)).toStrictEqual(ans);
 		},
 		{ timeout: 15000 },
 	);
@@ -73,9 +87,17 @@ describe.each([10, 10 ** 8])("random(min: %i)", (min) => {
 	test.concurrent(
 		"普通の数",
 		async () => {
+			const cases: bigint[] = [];
 			for (let _ = 0; _ < randomCases; _++) {
 				const n = faker.number.bigInt({ min, max: 10 ** 18 });
-				const ans = await run(n);
+				cases.push(n);
+			}
+
+			const ret = await runs(cases);
+
+			for (let i = 0; i < cases.length; i++) {
+				const n = cases[i];
+				const ans = ret[i];
 
 				expect(ans * ans).toBeLessThanOrEqual(n);
 				expect((ans + 1n) ** 2n).toBeGreaterThan(n);
