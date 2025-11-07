@@ -4,9 +4,16 @@
   "type": "module",
   "private": true,
   "devDependencies": {
-    "@types/bun": "latest"
+    "@biomejs/biome": "2.3.4",
+    "@faker-js/faker": "^10.1.0",
+    "@types/bun": "latest",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.6"
   },
   "peerDependencies": {
     "typescript": "^5"
+  },
+  "scripts": {
+    "prepare": "husky"
   }
 }

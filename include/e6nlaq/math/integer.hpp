@@ -10,9 +10,14 @@
 
 namespace e6nlaq {
 
-// nの桁数
-// O(1)
-/// @ref https://x.com/ngtkana/status/1980504937290428680
+/**
+ * @brief 符号なし整数の桁数を計算します
+ * @tparam T 符号なし整数型
+ * @param n 桁数を計算する整数
+ * @return int 10進数表記での桁数
+ * @note 計算量: O(1)
+ * @see https://x.com/ngtkana/status/1980504937290428680
+ */
 template <std::unsigned_integral T>
 int digits(T n) {
     using UnsignedT = std::make_unsigned_t<T>;
@@ -45,15 +50,27 @@ int digits(T n) {
     }
 }
 
+/**
+ * @brief 符号付き整数の桁数を計算します
+ * @tparam T 符号付き整数型
+ * @param n 桁数を計算する整数
+ * @return int 10進数表記での桁数（符号は除く）
+ * @note 計算量: O(1)
+ */
 template <std::signed_integral T>
 int digits(T n) {
     return digits(static_cast<std::make_unsigned_t<T>>(n < 0 ? -n : n));
 }
 
-/// floor(sqrt(n))
-/// nは非負整数
-/// O(log log N) / 実質O(1)
-/// ニュートン法を用いる
+/**
+ * @brief 非負整数の平方根の整数部を計算します（切り捨て）
+ * @tparam T 整数型
+ * @param n 非負整数（n >= 0）
+ * @return T floor(√n) の値
+ * @note 計算量: O(log log N) / 実質O(1)
+ * @note ニュートン法を使用して実装されています
+ * @warning nが負の場合はアサーションエラーが発生します
+ */
 template <std::integral T>
 T isqrt(T n) {
     assert(n >= 0);
@@ -87,8 +104,16 @@ T isqrt(T n) {
     return x;
 }
 
+/**
+ * @brief 与えられた整数が平方数かどうかを判定します
+ * @tparam T 整数型
+ * @param N 判定する整数
+ * @return bool Nが平方数の場合はtrue、そうでない場合はfalse
+ * @note 計算量: isqrt(N) に依存
+ * @note 例外を投げないことが保証されています
+ */
 template <std::integral T>
-inline bool is_squere(const T N) noexcept {
+inline bool is_square(const T N) noexcept {
     T r = isqrt(N);  // 切り捨てした平方根
     return (r * r) == N;
 }
