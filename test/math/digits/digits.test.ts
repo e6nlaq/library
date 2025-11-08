@@ -2,10 +2,13 @@ import { beforeAll, describe, expect, test } from "bun:test";
 import { faker } from "@faker-js/faker";
 import { compile, randomCases, run_cases } from "@/util";
 
-beforeAll(async () => {
-    await compile(import.meta.dir, "digits-int.cpp", "int.out");
-    await compile(import.meta.dir, "digits-ll.cpp", "ll.out");
-});
+beforeAll(
+    async () => {
+        await compile(import.meta.dir, "digits-int.cpp", "int.out");
+        await compile(import.meta.dir, "digits-ll.cpp", "ll.out");
+    },
+    { timeout: -1 },
+);
 
 async function run_int(n: bigint) {
     return (await run_ints([n]))[0];
