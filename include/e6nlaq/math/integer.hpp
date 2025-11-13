@@ -1,5 +1,6 @@
 // @e6nlaq/library / (C) 2025 e6nlaq
 
+#include <cstdlib>
 #ifndef E6NLAQ_MATH_INTEGER_HPP
 #define E6NLAQ_MATH_INTEGER_HPP 1
 
@@ -122,16 +123,25 @@ inline bool is_square(const T N) noexcept {
 }
 
 /**
- * @brief 切り上げ除算を行います
+ * @brief 切り上げ(無限大方向)除算を行います
  * @tparam T 整数型
  * @param a 被除数
- * @param b 正の除数 (b > 0)
- * @return T ceil(a / b) の値
+ * @param b 0でない除数 (b != 0)
+ * @return T ceil(a / b) の値（正の無限大方向に丸め）
+ * @throw std::invalid_argument bが0の場合
  * @note 計算量: O(1)
- * @warning bが0以下の場合の動作は未定義です
+ * @note a や b が負の場合も正の無限大方向に丸めます
  */
 template <std::integral T>
 inline constexpr T divup(T a, T b) {
+    if (b == 0) {
+        throw std::invalid_argument("divup: division by zero");
+    }
+
+    if (a < 0 || b < 0) {
+        throw std::invalid_argument("divup: a or b is negative");
+    }
+
     return (a + b - 1) / b;
 }
 
@@ -143,13 +153,12 @@ inline constexpr T divup(T a, T b) {
  * @return T x mod m の値（0以上m未満）
  * @note 計算量: O(1)
  * @note 常に0以上m未満の値を返します
- * @warning mが0以下の場合の動作は未定義です
  * @see https://qiita.com/happyisland44/items/8e4feb6805eecee29f83
  */
 template <std::integral T>
 inline constexpr T mmod(T x, T m) {
-    T r = x % m;
-    return r < 0 ? r + m : r;
+    m = std::abs(m);
+    return (x % m + m) % m;
 }
 
 /**
@@ -165,7 +174,7 @@ inline constexpr long long fact(const long long n) {
     if (n < 0) {
         throw std::invalid_argument("fact: n must be non-negative");
     }
-    
+
     long long res = 1;
     for (long long i = 1; i <= n; i++) {
         res *= i;
