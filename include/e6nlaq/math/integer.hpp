@@ -118,6 +118,58 @@ inline bool is_square(const T N) noexcept {
     return (r * r) == N;
 }
 
+/**
+ * @brief 切り上げ除算を行います
+ * @tparam T 整数型
+ * @param a 被除数
+ * @param b 正の除数 (b > 0)
+ * @return T ceil(a / b) の値
+ * @note 計算量: O(1)
+ * @warning bが0以下の場合の動作は未定義です
+ */
+template <std::integral T>
+inline constexpr T divup(T a, T b) {
+    return (a + b - 1) / b;
+}
+
+/**
+ * @brief 数学的な意味での剰余を計算します（負の数にも対応）
+ * @tparam T 整数型
+ * @param x 被除数
+ * @param m 正の除数 (m > 0)
+ * @return T x mod m の値（0以上m未満）
+ * @note 計算量: O(1)
+ * @note 常に0以上m未満の値を返します
+ * @warning mが0以下の場合の動作は未定義です
+ * @see https://qiita.com/happyisland44/items/8e4feb6805eecee29f83
+ */
+template <std::integral T>
+inline constexpr T mmod(T x, T m) {
+    T r = x % m;
+    return r < 0 ? r + m : r;
+}
+
+/**
+ * @brief 非負整数の階乗を計算します
+ * @param n 非負整数 (n >= 0)
+ * @return long long n! の値
+ * @note 計算量: O(n)
+ * @note nが0の場合は1を返します
+ * @warning nが大きいとオーバーフローする可能性があります（20! = 2,432,902,008,176,640,000）
+ * @throw std::invalid_argument nが負の場合にスローされます
+ */
+inline constexpr long long fact(const long long n) {
+    if (n < 0) {
+        throw std::invalid_argument("fact: n must be non-negative");
+    }
+    
+    long long res = 1;
+    for (long long i = 1; i <= n; i++) {
+        res *= i;
+    }
+    return res;
+}
+
 }  // namespace e6nlaq
 
 #endif  // E6NLAQ_MATH_INTEGER_HPP

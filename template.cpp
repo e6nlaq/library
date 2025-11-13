@@ -799,17 +799,6 @@ inline ll csum(const ll n) noexcept {
     return csum(to_string(n));
 }
 
-/// @brief 階乗を計算する
-/// @param n nの階乗
-/// @return nの階乗
-inline ll fact(const ll n) noexcept {
-    ll ret = 1;
-    rep(i, n) {
-        ret *= i + 1;
-    }
-    return ret;
-}
-
 /// @brief 一次元の累積和を返します
 /// @tparam T vectorの型
 /// @param v 加工する前の配列
@@ -1486,11 +1475,6 @@ inline void gmerge(CostGraph &g, ull a, ull b, ll c) {
     g[b].emplace_back(make_cost(a, c));
 }
 
-// https://x.gd/a7Yhv
-inline constexpr ll mmod(ll x, ll m) noexcept {
-    return (x % m + m) % m;
-}
-
 // Hash
 constexpr ll HMOD = (1LL << 61LL) - 1LL;
 ll HB = 0;
@@ -1716,11 +1700,6 @@ struct PrimeFact {
         return m;
     }
 };
-
-template <integral T>
-inline constexpr T divup(T a, T b) {
-    return (a + b - 1) / b;
-}
 
 #endif
 
