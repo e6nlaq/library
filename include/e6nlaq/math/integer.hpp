@@ -7,6 +7,7 @@
 #include <cassert>
 #include <concepts>
 #include <limits>
+#include <stdexcept>
 
 namespace e6nlaq {
 
@@ -69,11 +70,13 @@ int digits(T n) {
  * @return T floor(√n) の値
  * @note 計算量: O(log log N) / 実質O(1)
  * @note ニュートン法を使用して実装されています
- * @warning nが負の場合はアサーションエラーが発生します
+ * @throw std::invalid_argument nが負の場合にスローされます
  */
 template <std::integral T>
 T isqrt(T n) {
-    assert(n >= 0);
+    if (n < 0) {
+        throw std::invalid_argument("isqrt: n must be non-negative");
+    }
     if (n == 0) {
         return 0;
     }
