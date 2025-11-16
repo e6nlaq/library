@@ -64,7 +64,7 @@ inline std::istream &operator>>(std::istream &is, __int128_t &value) {
 
 template <typename T>
 inline std::istream &operator>>(std::istream &is, std::vector<T> &v) {
-#ifdef LOCAL
+#if defined(LOCAL) && !defined(ALLOW_ZERO_VEC_CIN)
     assert(v.size() != 0);
 #endif
     for (auto &elem : v) {
