@@ -6,6 +6,8 @@
 #include <concepts>
 #include <iostream>
 
+#include "e6nlaq/iostream.hpp"
+
 namespace e6nlaq {
 /**
  * @brief 改行を出力する
