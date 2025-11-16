@@ -12,13 +12,15 @@ namespace e6nlaq {
 
 #ifdef __GNUC__
 namespace {
-__int128 parse(std::string &s) {
+__int128 parse(const std::string &s) {
     __int128 ret = 0;
-    for (std::size_t i = 0; i < s.length(); i++)
-        if ('0' <= s[i] && s[i] <= '9')
-            ret = 10 * ret + s[i] - '0';
+    for (const char c : s) {
+        if ('0' <= c && c <= '9') {
+            ret = 10 * ret + (c - '0');
+        }
+    }
 
-    if (s[0] == '-') {
+    if (!s.empty() && s[0] == '-') {
         ret = -ret;
     }
 
