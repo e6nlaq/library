@@ -61,15 +61,15 @@ inline std::istream &operator>>(std::istream &is, __int128_t &value) {
 #endif  // __GNUC__
 
 template <typename T>
-inline std::istream &operator>>(std::istream &os, std::vector<T> &v) {
+inline std::istream &operator>>(std::istream &is, std::vector<T> &v) {
 #ifdef LOCAL
     assert(v.size() != 0);
 #endif
-    for (std::size_t i = 0; i < v.size(); i++) {
-        os >> v[i];
+    for (auto &elem : v) {
+        is >> elem;
     }
 
-    return os;
+    return is;
 }
 
 }  // namespace e6nlaq
