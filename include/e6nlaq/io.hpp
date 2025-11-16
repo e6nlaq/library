@@ -8,7 +8,11 @@
 
 namespace e6nlaq {
 inline void co() {
+#ifdef USE_ENDL
     std::cout << std::endl;
+#else
+    std::cout << "\n";
+#endif
 }
 
 template <typename Head, typename... Tail>
