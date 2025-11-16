@@ -46,12 +46,7 @@ inline void co(Head head, Tail... tail) {
 template <typename T>
     requires std::convertible_to<T, bool>
 inline void YESNO(T b) {
-    std::cout << (b ? "YES" : "NO");
-#ifdef USE_ENDL
-    std::cout << std::endl;
-#else
-    std::cout << "\n";
-#endif
+    co(b ? "YES" : "NO");
 }
 
 /**
@@ -62,12 +57,7 @@ inline void YESNO(T b) {
 template <typename T>
     requires std::convertible_to<T, bool>
 inline void yesno(T b) {
-    std::cout << (b ? "yes" : "no");
-#ifdef USE_ENDL
-    std::cout << std::endl;
-#else
-    std::cout << "\n";
-#endif
+    co(b ? "yes" : "no");
 }
 
 /**
@@ -78,12 +68,7 @@ inline void yesno(T b) {
 template <typename T>
     requires std::convertible_to<T, bool>
 inline void YesNo(T b) {
-    std::cout << (b ? "Yes" : "No");
-#ifdef USE_ENDL
-    std::cout << std::endl;
-#else
-    std::cout << "\n";
-#endif
+    co(b ? "Yes" : "No");
 }
 
 /**
@@ -98,16 +83,7 @@ inline void YesNo(T b) {
 template <typename T, typename tr, typename fal>
     requires std::convertible_to<T, bool>
 inline void outif(T b, tr tru, fal fals) {
-    if (b) {
-        std::cout << tru;
-    } else {
-        std::cout << fals;
-    }
-#ifdef USE_ENDL
-    std::cout << std::endl;
-#else
-    std::cout << "\n";
-#endif
+    co(b ? tru : fals);
 }
 
 /**
