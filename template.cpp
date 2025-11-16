@@ -122,55 +122,7 @@ concept number = integral<T> || floating_point<T>;
 #define rall(x) (x).rbegin(), (x).rend()
 #define elif else if
 
-// LOCALはflush欲しいよ～
-#ifndef LOCAL
-#define endl "\n"
-#endif
-
-template <typename T>
-    requires convertible_to<T, bool>
-inline void YESNO(T b) {
-    cout << (b ? "YES" : "NO") << endl;
-}
-
-template <typename T>
-    requires convertible_to<T, bool>
-inline void yesno(T b) {
-    cout << (b ? "yes" : "no") << endl;
-}
-
-template <typename T>
-    requires convertible_to<T, bool>
-inline void YesNo(T b) {
-    cout << (b ? "Yes" : "No") << endl;
-}
-
-template <typename T, typename tr, typename fal>
-    requires convertible_to<T, bool>
-inline void outif(T b, tr tru, fal fals) {
-    if (b) {
-        cout << tru << endl;
-    } else {
-        cout << fals << endl;
-    }
-}
-
 #define exit exit(0)
-
-void co() {
-    cout << endl;
-}
-
-template <typename Head, typename... Tail>
-void co(Head head, Tail... tail) {
-    cout << head;
-
-    if constexpr (sizeof...(tail) > 0) {
-        cout << " ";
-    }
-
-    co(tail...);
-}
 
 // 定数
 
@@ -1681,8 +1633,6 @@ ll codeforces_t = -1;
 /* Main Function */
 
 int main() {
-    fastio();
-
     return 0;
 }
 
