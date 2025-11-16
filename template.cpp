@@ -254,52 +254,6 @@ operator*(std::string const &str, int n) {
     return result;
 }
 
-// https://kenkoooo.hatenablog.com/entry/2016/11/30/163533
-std::ostream &operator<<(std::ostream &dest, __int128_t value) {
-    std::ostream::sentry s(dest);
-    if (s) {
-        __uint128_t tmp = value < 0 ? -value : value;
-        char buffer[128];
-        char *d = std::end(buffer);
-        do {
-            --d;
-            *d = "0123456789"[tmp % 10];
-            tmp /= 10;
-        } while (tmp != 0);
-        if (value < 0) {
-            --d;
-            *d = '-';
-        }
-        int len = std::end(buffer) - d;
-        if (dest.rdbuf()->sputn(d, len) != len) {
-            dest.setstate(std::ios_base::badbit);
-        }
-    }
-    return dest;
-}
-
-__int128 parse(string &s) {
-    __int128 ret = 0;
-    for (ull i = 0; i < s.length(); i++)
-        if ('0' <= s[i] && s[i] <= '9')
-            ret = 10 * ret + s[i] - '0';
-
-    if (s[0] == '-') {
-        ret = -ret;
-    }
-
-    return ret;
-}
-
-istream &operator>>(std::istream &is, __int128_t &value) {
-    string tmp;
-    is >> tmp;
-
-    value = parse(tmp);
-
-    return is;
-}
-
 // 関数類
 
 // O(√N)
@@ -402,18 +356,6 @@ inline void print(const vector<vector<T>> &v, string const &s = " ") noexcept(ex
     rep(i, v.size()) {
         rep(j, v[i].size()) cout << v[i][j] << (j != (ll)v[i].size() - 1 ? s : "\n");
     }
-}
-
-template <typename T>
-inline istream &operator>>(istream &os, vector<T> &v) {
-#ifdef LOCAL
-    assert(v.size() != 0);
-#endif
-    rep(i, v.size()) {
-        cin >> v[i];
-    }
-
-    return os;
 }
 
 /**

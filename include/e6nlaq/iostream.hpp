@@ -1,0 +1,77 @@
+// @e6nlaq/library / (C) 2025 e6nlaq
+
+#ifndef E6NLAQ_IOSTREAM_HPP
+#define E6NLAQ_IOSTREAM_HPP 1
+
+#include <cassert>
+#include <iostream>
+#include <string>
+#include <vector>
+
+namespace e6nlaq {
+
+#ifdef __GNUC__
+namespace {
+__int128 parse(std::string &s) {
+    __int128 ret = 0;
+    for (std::size_t i = 0; i < s.length(); i++)
+        if ('0' <= s[i] && s[i] <= '9')
+            ret = 10 * ret + s[i] - '0';
+
+    if (s[0] == '-') {
+        ret = -ret;
+    }
+
+    return ret;
+}
+}  // namespace
+
+// https://kenkoooo.hatenablog.com/entry/2016/11/30/163533
+inline std::ostream &operator<<(std::ostream &dest, __int128_t value) {
+    std::ostream::sentry s(dest);
+    if (s) {
+        __uint128_t tmp = value < 0 ? -value : value;
+        char buffer[128];
+        char *d = std::end(buffer);
+        do {
+            --d;
+            *d = "0123456789"[tmp % 10];
+            tmp /= 10;
+        } while (tmp != 0);
+        if (value < 0) {
+            --d;
+            *d = '-';
+        }
+        int len = std::end(buffer) - d;
+        if (dest.rdbuf()->sputn(d, len) != len) {
+            dest.setstate(std::ios_base::badbit);
+        }
+    }
+    return dest;
+}
+
+inline std::istream &operator>>(std::istream &is, __int128_t &value) {
+    std::string tmp;
+    is >> tmp;
+
+    value = parse(tmp);
+
+    return is;
+}
+#endif  // __GNUC__
+
+template <typename T>
+inline std::istream &operator>>(std::istream &os, std::vector<T> &v) {
+#ifdef LOCAL
+    assert(v.size() != 0);
+#endif
+    for (std::size_t i = 0; i < v.size(); i++) {
+        os >> v[i];
+    }
+
+    return os;
+}
+
+}  // namespace e6nlaq
+
+#endif  // E6NLAQ_IOSTREAM_HPP
