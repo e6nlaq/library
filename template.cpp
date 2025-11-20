@@ -326,11 +326,6 @@ inline int ctoi(const char c) noexcept {
     return 0;
 }
 
-// O(1)
-inline ull minisum(const ull n) noexcept {
-    return n * (n + 1ULL) / 2ULL;
-}
-
 // 数値0埋め
 // O(N)
 inline string zerou(const ull i, string s) noexcept {

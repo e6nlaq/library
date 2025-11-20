@@ -213,6 +213,18 @@ inline unsigned long long pow_ll(unsigned long long x, unsigned long long n) noe
     return ret;
 }
 
+/**
+ * @brief 1からnまでの総和を計算します
+ * @param n 非負整数
+ * @return unsigned long long 1 + 2 + ... + n の値
+ * @note 計算量: O(1)
+ * @note 公式: n(n+1)/2 を使用して実装されています
+ * @warning nが大きいとオーバーフローする可能性があります
+ */
+inline unsigned long long minisum(const unsigned long long n) noexcept {
+    return n * (n + 1ULL) / 2ULL;
+}
+
 }  // namespace e6nlaq
 
 #endif  // E6NLAQ_MATH_INTEGER_HPP
