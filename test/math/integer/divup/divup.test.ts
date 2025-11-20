@@ -80,9 +80,9 @@ describe("random tests", () => {
             const a = faker.number.bigInt(2n ** 62n);
             const b = faker.number.bigInt({ min: 1, max: 2n ** 30n });
             inputs.push([a, b]);
-            // inputs.push([a, -b]);
-            // inputs.push([-a, b]);
-            // inputs.push([-a, -b]);
+            inputs.push([a, -b]);
+            inputs.push([-a, b]);
+            inputs.push([-a, -b]);
         }
         const results = await runs(inputs);
         const expected = inputs.map(([a, b]) => divup_ts(a, b));
