@@ -19,35 +19,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// ローカル環境チェック
-#if __has_include("./cpp-dump/cpp-dump.hpp")
-#define LOCAL
-#define _GLIBCXX_DEBUG
-#endif
-
-#if __has_include(<atcoder/all>)
-#include <atcoder/all>
-using namespace atcoder;
-#endif
-
-#ifdef LOCAL
-#include "./debug.hpp"
-
-namespace cp = cpp_dump;
-
-// clangdを黙らせる
-const auto _unnsedcpnamespaceunwarn = cp::options::es_value;
-#else
-#define debug(...)
-#define CPP_DUMP_DEFINE_EXPORT_OBJECT(...)
-#endif
-
-// 高速化
-#pragma GCC target("avx,avx2")
-#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
-#pragma GCC optimize("O3")
-#pragma GCC optimize("unroll-loops")
-
 // 型省略
 using uint = unsigned;
 using ll = long long;
@@ -148,22 +119,22 @@ mt19937_64 rng;
 // 色々なテンプレ(完全コピペ)
 
 template <class T>
-size_t HashCombine(const size_t seed, const T &v) {
+size_t HashCombine(const size_t seed, const T& v) {
     return seed ^ (std::hash<T>()(v) + 0x9e3779b9 + (seed << 6) + (seed >> 2));
 }
 /* pair用 */
 template <class T, class S>
 struct std::hash<std::pair<T, S>> {
-    size_t operator()(const std::pair<T, S> &keyval) const noexcept {
+    size_t operator()(const std::pair<T, S>& keyval) const noexcept {
         return HashCombine(std::hash<T>()(keyval.first), keyval.second);
     }
 };
 /* vector用 */
 template <class T>
 struct std::hash<std::vector<T>> {
-    size_t operator()(const std::vector<T> &keyval) const noexcept {
+    size_t operator()(const std::vector<T>& keyval) const noexcept {
         size_t s = 0;
-        for (auto &&v : keyval)
+        for (auto&& v : keyval)
             s = HashCombine(s, v);
         return s;
     }
@@ -172,7 +143,7 @@ struct std::hash<std::vector<T>> {
 template <int N>
 struct HashTupleCore {
     template <class Tuple>
-    size_t operator()(const Tuple &keyval) const noexcept {
+    size_t operator()(const Tuple& keyval) const noexcept {
         size_t s = HashTupleCore<N - 1>()(keyval);
         return HashCombine(s, std::get<N - 1>(keyval));
     }
@@ -180,22 +151,22 @@ struct HashTupleCore {
 template <>
 struct HashTupleCore<0> {
     template <class Tuple>
-    size_t operator()(const Tuple &keyval) const noexcept { return 0; }
+    size_t operator()(const Tuple& keyval) const noexcept { return 0; }
 };
 template <class... Args>
 struct std::hash<std::tuple<Args...>> {
-    size_t operator()(const tuple<Args...> &keyval) const noexcept {
+    size_t operator()(const tuple<Args...>& keyval) const noexcept {
         return HashTupleCore<tuple_size<tuple<Args...>>::value>()(keyval);
     }
 };
 
 std::string
-operator""_s(char const *str, std::size_t) {
+operator""_s(char const* str, std::size_t) {
     return str;
 }
 
 std::string
-operator*(std::string const &str, int n) {
+operator*(std::string const& str, int n) {
     if (n < 1)
         return "";
     std::string result;
@@ -262,8 +233,8 @@ inline char to_char(const ull i) {
 }
 
 template <typename T1, typename T2>
-    requires totally_ordered_with<T1, T2> && assignable_from<T1 &, T2>
-inline bool chmax(T1 &i, const T2 j) noexcept {
+    requires totally_ordered_with<T1, T2> && assignable_from<T1&, T2>
+inline bool chmax(T1& i, const T2 j) noexcept {
     if (i < j) {
         i = j;
         return true;
@@ -272,8 +243,8 @@ inline bool chmax(T1 &i, const T2 j) noexcept {
 }
 
 template <typename T1, typename T2>
-    requires totally_ordered_with<T1, T2> && assignable_from<T1 &, T2>
-inline bool chmin(T1 &i, const T2 j) noexcept {
+    requires totally_ordered_with<T1, T2> && assignable_from<T1&, T2>
+inline bool chmin(T1& i, const T2 j) noexcept {
     if (i > j) {
         i = j;
         return true;
@@ -290,12 +261,12 @@ inline bool chmin(T1 &i, const T2 j) noexcept {
  * @author https://zenn.dev/antyuntyun
  */
 template <typename T>
-inline void print(const vector<T> &v, const string &s = " ") noexcept {
+inline void print(const vector<T>& v, const string& s = " ") noexcept {
     rep(i, v.size()) cout << v[i] << (i != (ll)v.size() - 1 ? s : "\n");
 }
 
 template <typename A, typename B>
-inline void print(const vector<pair<A, B>> &v, const string &s = "\n") noexcept {
+inline void print(const vector<pair<A, B>>& v, const string& s = "\n") noexcept {
     rep(i, v.size()) cout << v[i].first << " " << v[i].second << s;
 }
 
@@ -304,7 +275,7 @@ inline void print(const vector<pair<A, B>> &v, const string &s = "\n") noexcept 
 /// @param v 二次元配列
 /// @param s 区切り文字
 template <typename T>
-inline void print(const vector<vector<T>> &v, string const &s = " ") noexcept(except) {
+inline void print(const vector<vector<T>>& v, string const& s = " ") noexcept(except) {
     rep(i, v.size()) {
         rep(j, v[i].size()) cout << v[i][j] << (j != (ll)v[i].size() - 1 ? s : "\n");
     }
@@ -336,7 +307,7 @@ inline unsigned long long pow_ll(unsigned long long x, unsigned long long n) noe
 }
 
 template <typename T>
-inline vector<vector<T>> make_vec2(const ull H, const ull W, const T &init) {
+inline vector<vector<T>> make_vec2(const ull H, const ull W, const T& init) {
     return vector<vector<T>>(H, vector<T>(W, init));
 }
 
@@ -346,7 +317,7 @@ inline vector<vector<T>> make_vec2(const ull H, const ull W) {
 }
 
 template <typename T>
-inline vector<vector<vector<T>>> make_vec3(const ull X, const ull Y, const ull Z, const T &init) {
+inline vector<vector<vector<T>>> make_vec3(const ull X, const ull Y, const ull Z, const T& init) {
     return vector<vector<vector<T>>>(X, make_vec2<T>(Y, Z, init));
 }
 
@@ -524,7 +495,7 @@ inline char decton(const int n) {
 /// @param n 文字の進数
 /// @param m 出力の進数
 /// @return M進数の文字
-inline string n_ary(const string &str, const int n, const int m) {
+inline string n_ary(const string& str, const int n, const int m) {
     unsigned long tmp = 0;
     string ret;
 
@@ -616,7 +587,7 @@ inline vll divisor(const ll n) {
 /// @brief 文字列が数字のみか判定します O(|S|)
 /// @param s 判定する文字列
 /// @return 数値でできた文字列かどうか
-inline bool isint(const string &s) noexcept {
+inline bool isint(const string& s) noexcept {
     rep(i, s.size()) {
         if (!isdigit(s[i])) {
             return false;
@@ -631,7 +602,7 @@ inline bool isint(const string &s) noexcept {
 /// @param arr 二次元配列
 /// @return 返り値
 template <typename T>
-[[nodiscard]] inline vector<vector<T>> rot90(const vector<vector<T>> &A) {
+[[nodiscard]] inline vector<vector<T>> rot90(const vector<vector<T>>& A) {
     ll N = A.size(), M = A[0].size();
     vector<vector<T>> ret(M, vector<T>(N));
 
@@ -652,7 +623,7 @@ template <typename T>
 /// @brief 回文かどうか判定
 /// @param str 文字列
 /// @return 回文かどうか
-inline bool ispalind(const string &str) noexcept {
+inline bool ispalind(const string& str) noexcept {
     ull n = str.length();
     for (ull i = 0; i < n / 2; i++) {
         if (str[i] != str[n - i - 1]) {
@@ -662,7 +633,7 @@ inline bool ispalind(const string &str) noexcept {
     return true;
 }
 
-inline bool ispalind(const string &str, ull x, ull n) {
+inline bool ispalind(const string& str, ull x, ull n) {
     assert(x < str.size());
     assert(x + n <= str.size());
 
@@ -677,7 +648,7 @@ inline bool ispalind(const string &str, ull x, ull n) {
 /// @brief 10進法で表した時の各桁の和を求めます
 /// @param s 10進法で表した文字列
 /// @return 各桁の和
-inline ll csum(const string &s) noexcept {
+inline ll csum(const string& s) noexcept {
     ll ret = 0;
     rep(i, s.size()) {
         ret += ctoi(s[i]);
@@ -709,7 +680,7 @@ inline ll fact(const ll n) noexcept {
 /// @param v 加工する前の配列
 /// @return 加工後の配列(長さは |v|+1 となります。)
 template <typename T>
-inline vector<T> cum(const vector<T> &v) noexcept {
+inline vector<T> cum(const vector<T>& v) noexcept {
     vector<T> ans(v.size() + 1);
     ans[0] = 0;
     for (ull i = 1; i <= v.size(); i++) {
@@ -723,7 +694,7 @@ inline vector<T> cum(const vector<T> &v) noexcept {
 /// @param v 加工前の配列
 /// @return 加工後の配列(長さはそれぞれ+1になります)
 template <typename T>
-inline vec2<T> cum(const vec2<T> &v) {
+inline vec2<T> cum(const vec2<T>& v) {
     assert(v.size() > 0);
     ull H = v.size(), W = v[0].size();
     auto ret = make_vec2<T>(H + 1, W + 1, 0);
@@ -743,7 +714,7 @@ inline vec2<T> cum(const vec2<T> &v) {
 }
 
 template <typename T>
-inline vec3<T> cum(const vec3<T> &v) {
+inline vec3<T> cum(const vec3<T>& v) {
     assert(v.size() > 0 && v[0].size() > 0);
     ll x = v.size();
     ll y = v[0].size();
@@ -766,7 +737,7 @@ inline vec3<T> cum(const vec3<T> &v) {
 
 // 0-indexed
 template <typename T>
-inline ll cumcnt(const vec2<T> &z, ll lx, ll ly, ll rx, ll ry) {
+inline ll cumcnt(const vec2<T>& z, ll lx, ll ly, ll rx, ll ry) {
     lx++;
     ly++;
     rx++;
@@ -775,7 +746,7 @@ inline ll cumcnt(const vec2<T> &z, ll lx, ll ly, ll rx, ll ry) {
 }
 
 template <typename T>
-inline ll cumcnt(const vec3<T> &z, ll lx, ll ly, ll lz, ll rx, ll ry, ll rz) {
+inline ll cumcnt(const vec3<T>& z, ll lx, ll ly, ll lz, ll rx, ll ry, ll rz) {
     lx++;
     ly++;
     lz++;
@@ -790,7 +761,7 @@ template <integral T>
 #else
 template <typename T>
 #endif
-inline vector<T> cumxor(const vector<T> &x) {
+inline vector<T> cumxor(const vector<T>& x) {
     vector<T> ans(x.size() + 1);
     ans[0] = 0;
     irep(i, x.size()) {
@@ -816,7 +787,7 @@ inline ll randint(const ll l, const ll r) noexcept {
 /// @param x 探索するやつ
 /// @return 数
 template <typename T>
-inline long long bound_count(const vector<T> &v, const T &x) noexcept {
+inline long long bound_count(const vector<T>& v, const T& x) noexcept {
     auto l = lower_bound(v.begin(), v.end(), x);
     auto u = upper_bound(v.begin(), v.end(), x);
 
@@ -837,7 +808,7 @@ inline long long bound_count(const vector<T> &v, const T &x) noexcept {
 /// @param x 最近値を求める値
 /// @return xの最近値
 template <typename T>
-inline T recent(const vector<T> &v, const T &x) noexcept {
+inline T recent(const vector<T>& v, const T& x) noexcept {
     auto it = lower_bound(all(v), x);
 
     if (it == v.end())
@@ -857,7 +828,7 @@ inline T recent(const vector<T> &v, const T &x) noexcept {
 /// @brief 文字列圧縮
 /// @param str 圧縮する文字列
 /// @return 圧縮後
-inline vector<pair<char, ull>> rlencode(const string &str) noexcept {
+inline vector<pair<char, ull>> rlencode(const string& str) noexcept {
     ull n = (ull)str.size();
     vector<pair<char, ull>> ret;
     for (ull l = 0; l < n;) {
@@ -871,7 +842,7 @@ inline vector<pair<char, ull>> rlencode(const string &str) noexcept {
 }
 
 template <typename T>
-inline vector<pair<T, ull>> rlencode(const vector<T> &v) noexcept {
+inline vector<pair<T, ull>> rlencode(const vector<T>& v) noexcept {
     ull n = (ull)v.size();
     vector<pair<T, ull>> ret;
     for (ull l = 0; l < n;) {
@@ -885,7 +856,7 @@ inline vector<pair<T, ull>> rlencode(const vector<T> &v) noexcept {
 }
 
 template <typename T>
-inline map<T, ll> counter(const vector<T> &v) noexcept {
+inline map<T, ll> counter(const vector<T>& v) noexcept {
     map<T, ll> dat;
     rep(i, v.size()) {
         dat[v[i]]++;
@@ -894,7 +865,7 @@ inline map<T, ll> counter(const vector<T> &v) noexcept {
     return dat;
 }
 
-inline map<char, ll> counter(const string &s) noexcept {
+inline map<char, ll> counter(const string& s) noexcept {
     map<char, ll> dat;
     rep(i, s.size()) {
         dat[s[i]]++;
@@ -925,7 +896,7 @@ inline ld euclidean(const ld x1, const ld y1, const ld x2, const ld y2) noexcept
 /// @param r 右端
 /// @return
 template <typename T>
-inline ll lencnt(const vector<T> &v, const T &l, const T &r) noexcept {
+inline ll lencnt(const vector<T>& v, const T& l, const T& r) noexcept {
     return upper_bound(all(v), r) - lower_bound(all(v), l);
 }
 
@@ -936,12 +907,12 @@ struct CostEdge {
     ll cost;
 
 #if __cplusplus >= 202002L
-    auto operator<=>(const CostEdge &e) const {
+    auto operator<=>(const CostEdge& e) const {
         return this->cost <=> e.cost;
     }
 #endif
 
-    bool operator==(const CostEdge &e) const {
+    bool operator==(const CostEdge& e) const {
         return this->cost == e.cost;
     }
 };
@@ -950,7 +921,7 @@ struct FromCostEdge : CostEdge {
     GraphKey from;
 };
 
-ostream &operator<<(ostream &os, const CostEdge &cost) {
+ostream& operator<<(ostream& os, const CostEdge& cost) {
     os << "{ to: " << cost.to << ", cost: " << cost.cost << " }";
 
     return os;
@@ -965,7 +936,7 @@ inline CostEdge make_cost(const GraphKey to, const ll cost) noexcept {
     return CostEdge{to, cost};
 }
 
-inline CostGraph to_costgraph(const Graph &g) noexcept {
+inline CostGraph to_costgraph(const Graph& g) noexcept {
     CostGraph ans(g.size());
     rep(i, g.size()) {
         rep(j, g[i].size()) {
@@ -976,7 +947,7 @@ inline CostGraph to_costgraph(const Graph &g) noexcept {
     return ans;
 }
 
-inline pair<GraphKey, ll> __tree_diamiter_dfs(const CostGraph &G, ll u, ll par) {  // 最遠点間距離と最遠点を求める
+inline pair<GraphKey, ll> __tree_diamiter_dfs(const CostGraph& G, ll u, ll par) {  // 最遠点間距離と最遠点を求める
     pair<GraphKey, ll> ret = make_pair((GraphKey)0, u);
     for (auto e : G[u]) {
         if (e.to == par)
@@ -989,7 +960,7 @@ inline pair<GraphKey, ll> __tree_diamiter_dfs(const CostGraph &G, ll u, ll par) 
 }
 
 // 木の直径
-inline GraphKey tree_diamiter(const CostGraph &G) {
+inline GraphKey tree_diamiter(const CostGraph& G) {
     pair<GraphKey, ll> p = __tree_diamiter_dfs(G, 0LL, -1LL);
     pair<GraphKey, ll> q = __tree_diamiter_dfs(G, p.second, -1LL);
     return q.first;
@@ -997,11 +968,11 @@ inline GraphKey tree_diamiter(const CostGraph &G) {
 
 // 木の直径
 // O(V)
-inline GraphKey tree_diamiter(const Graph &G) {
+inline GraphKey tree_diamiter(const Graph& G) {
     return tree_diamiter(to_costgraph(G));
 }
 
-inline vector<ll> dijkstra(const CostGraph &G, ll start = 0, ll init = 0) {
+inline vector<ll> dijkstra(const CostGraph& G, ll start = 0, ll init = 0) {
     ll n = G.size();
     assert(0 <= start && start < n);
     vector<bool> kakutei(n, false);
@@ -1032,7 +1003,7 @@ inline vector<ll> dijkstra(const CostGraph &G, ll start = 0, ll init = 0) {
     return cur;
 }
 
-inline vector<ll> dijkstra(const CostGraph &G, vll &prv, ll start = 0, ll init = 0) {
+inline vector<ll> dijkstra(const CostGraph& G, vll& prv, ll start = 0, ll init = 0) {
     ll n = G.size();
     assert(0 <= start && start < n);
     vector<bool> kakutei(n, false);
@@ -1065,7 +1036,7 @@ inline vector<ll> dijkstra(const CostGraph &G, vll &prv, ll start = 0, ll init =
     return cur;
 }
 
-inline vector<ll> get_path(const vector<ll> &prev, ll t) {
+inline vector<ll> get_path(const vector<ll>& prev, ll t) {
     vector<ll> path;
     for (ll cur = t; cur != -1; cur = prev[cur]) {
         path.push_back(cur);
@@ -1074,15 +1045,15 @@ inline vector<ll> get_path(const vector<ll> &prev, ll t) {
     return path;
 }
 
-inline vector<ll> dijkstra(const Graph &G, ll start = 0, ll init = 0) {
+inline vector<ll> dijkstra(const Graph& G, ll start = 0, ll init = 0) {
     return dijkstra(to_costgraph(G), start, init);
 }
 
-inline vector<ll> dijkstra(const Graph &G, vll &prv, ll start = 0, ll init = 0) {
+inline vector<ll> dijkstra(const Graph& G, vll& prv, ll start = 0, ll init = 0) {
     return dijkstra(to_costgraph(G), prv, start, init);
 }
 
-inline vector<vector<ll>> warshall_floyd(const CostGraph &G) {
+inline vector<vector<ll>> warshall_floyd(const CostGraph& G) {
     ll n = G.size();
     vvll d = make_vec2<ll>(n, n, INFLL);
 
@@ -1107,7 +1078,7 @@ inline vector<vector<ll>> warshall_floyd(const CostGraph &G) {
     return d;
 }
 
-inline vector<vector<ll>> warshall_floyd(const Graph &G) {
+inline vector<vector<ll>> warshall_floyd(const Graph& G) {
     return warshall_floyd(to_costgraph(G));
 }
 
@@ -1153,14 +1124,14 @@ class CustomBit {
         this->__reload_val();
     }
 
-    CustomBit &operator++(int) {
+    CustomBit& operator++(int) {
         this->__val++;
         this->__reload();
 
         return *this;
     }
 
-    CustomBit &operator++() {
+    CustomBit& operator++() {
         auto tmp = *this;
         ++this->__val;
 
@@ -1194,7 +1165,7 @@ class CustomBit {
 };
 
 template <ull bit, ull n>
-ostream &operator<<(ostream &os, const CustomBit<bit, n> &bits) {
+ostream& operator<<(ostream& os, const CustomBit<bit, n>& bits) {
     os << "[";
     for (ll i = 0; i < n; ++i) {
         os << bits.get(i) << (i != n - 1 ? ", " : "");
@@ -1267,7 +1238,7 @@ class UnionFind {
     std::vector<ll> m_parentsOrSize;
 };
 
-inline vector<FromCostEdge> to_fromcostedges(const CostGraph &g) {
+inline vector<FromCostEdge> to_fromcostedges(const CostGraph& g) {
     vector<FromCostEdge> dat;
     rep(i, g.size()) {
         rep(j, g[i].size()) {
@@ -1283,11 +1254,11 @@ inline vector<FromCostEdge> to_fromcostedges(const CostGraph &g) {
 /// @param v 頂点数
 /// @return
 /// @see https://x.gd/7JLRg
-inline ll get_mst(const vector<FromCostEdge> &edges, ll v) {
+inline ll get_mst(const vector<FromCostEdge>& edges, ll v) {
     UnionFind uf(v);
     ll sum = 0;
 
-    for (const auto &edge : edges) {
+    for (const auto& edge : edges) {
         if (!uf.connected(edge.from, edge.to)) {
             uf.merge(edge.from, edge.to);
             sum += edge.cost;
@@ -1298,7 +1269,7 @@ inline ll get_mst(const vector<FromCostEdge> &edges, ll v) {
 }
 
 template <typename T>
-inline T sum(const vector<T> &v) {
+inline T sum(const vector<T>& v) {
     T ans = 0;
     rep(i, v.size()) ans += v[i];
 
@@ -1310,7 +1281,7 @@ template <number T>
 #else
 template <typename T>
 #endif
-inline vector<T> zaatsu(const vector<T> &A) {
+inline vector<T> zaatsu(const vector<T>& A) {
     vector<T> B = A;
 
     // B を小さい順にソート
@@ -1332,7 +1303,7 @@ inline vector<T> zaatsu(const vector<T> &A) {
 // https://x.gd/yonBS
 class Doubling {
    public:
-    explicit Doubling(const vll &x, ull max_k) {
+    explicit Doubling(const vll& x, ull max_k) {
         k = bit_width(max_k);
         n = x.size();
         dp = make_vec2<ll>(k + 1, n);
@@ -1366,14 +1337,14 @@ class Doubling {
     vvll dp;
 };
 
-inline void gmerge(Graph &g, ull a, ull b) {
+inline void gmerge(Graph& g, ull a, ull b) {
     assert(a < g.size());
     assert(b < g.size());
     g[a].emplace_back(b);
     g[b].emplace_back(a);
 }
 
-inline void gmerge(CostGraph &g, ull a, ull b, ll c) {
+inline void gmerge(CostGraph& g, ull a, ull b, ll c) {
     assert(a < g.size());
     assert(b < g.size());
     g[a].emplace_back(make_cost(b, c));
@@ -1399,7 +1370,7 @@ inline void fastio() noexcept {
     HB = randint(150, HMOD - 10);
 }
 
-inline vll str_to_vec(const string &s) {
+inline vll str_to_vec(const string& s) {
     vll ans(s.size());
     rep(i, s.size()) {
         ans[i] = s[i];
@@ -1424,7 +1395,7 @@ inline void init_hash(ll n) {
     inited_hpow = true;
 }
 
-inline vll rolling_hash(const vll &a) {
+inline vll rolling_hash(const vll& a) {
     assert(inited_hpow);
 
     vll h(a.size() + 1);
@@ -1434,11 +1405,11 @@ inline vll rolling_hash(const vll &a) {
     return h;
 }
 
-inline vll rolling_hash(const string &s) {
+inline vll rolling_hash(const string& s) {
     return rolling_hash(str_to_vec(s));
 }
 
-inline ll get_hash(const vll &h, ll l, ll r) {
+inline ll get_hash(const vll& h, ll l, ll r) {
     ll val = h[r + 1] - hmod_mul(h[l], HPOW[r - l + 1]);
     if (val < 0) val += HMOD;
 
@@ -1450,13 +1421,13 @@ struct TopologicalResult {
     bool just_one;
 };
 
-inline TopologicalResult topological_sort(const Graph &graph) noexcept {
+inline TopologicalResult topological_sort(const Graph& graph) noexcept {
     // 各頂点の入次数を管理する配列
     std::vector<int> indegrees(graph.size());
 
     // 入次数を計算する
-    for (const auto &v : graph) {
-        for (const auto &to : v) {
+    for (const auto& v : graph) {
+        for (const auto& to : v) {
             ++indegrees[to];
         }
     }
@@ -1489,7 +1460,7 @@ inline TopologicalResult topological_sort(const Graph &graph) noexcept {
         result.push_back(from);
 
         // その頂点から出る各辺について
-        for (const auto &to : graph[from]) {
+        for (const auto& to : graph[from]) {
             // その先の頂点の入次数を減らし、新たに 0 になったらキューに追加する
             if (--indegrees[to] == 0) {
                 q.push(to);
