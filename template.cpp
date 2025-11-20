@@ -427,20 +427,6 @@ inline string srev(string s) noexcept {
     return s;
 }
 
-// 整数べき乗
-// O(log N)
-inline unsigned long long pow_ll(unsigned long long x, unsigned long long n) noexcept {
-    ull ret = 1LL;
-    while (n > 0) {
-        if (n & 1LL)
-            ret *= x;
-        x *= x;
-        n >>= 1LL;
-    }
-
-    return ret;
-}
-
 template <typename T>
 inline vector<vector<T>> make_vec2(const ull H, const ull W, const T &init) {
     return vector<vector<T>>(H, vector<T>(W, init));

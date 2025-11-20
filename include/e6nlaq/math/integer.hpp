@@ -191,6 +191,28 @@ inline constexpr long long fact(const long long n) {
     return res;
 }
 
+/**
+ * @brief 整数のべき乗を計算します (x^n)
+ * @param x 底
+ * @param n 指数
+ * @return unsigned long long x^n の値
+ * @note 計算量: O(log n)
+ * @note 繰り返し二乗法を使用して実装されています
+ * @note 0^0=1です
+ * @warning 結果がオーバーフローする可能性があります
+ */
+inline unsigned long long pow_ll(unsigned long long x, unsigned long long n) noexcept {
+    unsigned long long ret = 1LL;
+    while (n > 0) {
+        if (n & 1LL)
+            ret *= x;
+        x *= x;
+        n >>= 1LL;
+    }
+
+    return ret;
+}
+
 }  // namespace e6nlaq
 
 #endif  // E6NLAQ_MATH_INTEGER_HPP
