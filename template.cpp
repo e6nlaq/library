@@ -19,35 +19,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// ローカル環境チェック
-#if __has_include("./cpp-dump/cpp-dump.hpp")
-#define LOCAL
-#define _GLIBCXX_DEBUG
-#endif
-
-#if __has_include(<atcoder/all>)
-#include <atcoder/all>
-using namespace atcoder;
-#endif
-
-#ifdef LOCAL
-#include "./debug.hpp"
-
-namespace cp = cpp_dump;
-
-// clangdを黙らせる
-const auto _unnsedcpnamespaceunwarn = cp::options::es_value;
-#else
-#define debug(...)
-#define CPP_DUMP_DEFINE_EXPORT_OBJECT(...)
-#endif
-
-// 高速化
-#pragma GCC target("avx,avx2")
-#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
-#pragma GCC optimize("O3")
-#pragma GCC optimize("unroll-loops")
-
 // 型省略
 using uint = unsigned;
 using ll = long long;
@@ -122,55 +93,7 @@ concept number = integral<T> || floating_point<T>;
 #define rall(x) (x).rbegin(), (x).rend()
 #define elif else if
 
-// LOCALはflush欲しいよ～
-#ifndef LOCAL
-#define endl "\n"
-#endif
-
-template <typename T>
-    requires convertible_to<T, bool>
-inline void YESNO(T b) {
-    cout << (b ? "YES" : "NO") << endl;
-}
-
-template <typename T>
-    requires convertible_to<T, bool>
-inline void yesno(T b) {
-    cout << (b ? "yes" : "no") << endl;
-}
-
-template <typename T>
-    requires convertible_to<T, bool>
-inline void YesNo(T b) {
-    cout << (b ? "Yes" : "No") << endl;
-}
-
-template <typename T, typename tr, typename fal>
-    requires convertible_to<T, bool>
-inline void outif(T b, tr tru, fal fals) {
-    if (b) {
-        cout << tru << endl;
-    } else {
-        cout << fals << endl;
-    }
-}
-
 #define exit exit(0)
-
-void co() {
-    cout << endl;
-}
-
-template <typename Head, typename... Tail>
-void co(Head head, Tail... tail) {
-    cout << head;
-
-    if constexpr (sizeof...(tail) > 0) {
-        cout << " ";
-    }
-
-    co(tail...);
-}
 
 // 定数
 
@@ -252,52 +175,6 @@ operator*(std::string const& str, int n) {
         result += str;
     }
     return result;
-}
-
-// https://kenkoooo.hatenablog.com/entry/2016/11/30/163533
-std::ostream& operator<<(std::ostream& dest, __int128_t value) {
-    std::ostream::sentry s(dest);
-    if (s) {
-        __uint128_t tmp = value < 0 ? -value : value;
-        char buffer[128];
-        char* d = std::end(buffer);
-        do {
-            --d;
-            *d = "0123456789"[tmp % 10];
-            tmp /= 10;
-        } while (tmp != 0);
-        if (value < 0) {
-            --d;
-            *d = '-';
-        }
-        int len = std::end(buffer) - d;
-        if (dest.rdbuf()->sputn(d, len) != len) {
-            dest.setstate(std::ios_base::badbit);
-        }
-    }
-    return dest;
-}
-
-__int128 parse(string& s) {
-    __int128 ret = 0;
-    for (ull i = 0; i < s.length(); i++)
-        if ('0' <= s[i] && s[i] <= '9')
-            ret = 10 * ret + s[i] - '0';
-
-    if (s[0] == '-') {
-        ret = -ret;
-    }
-
-    return ret;
-}
-
-istream& operator>>(std::istream& is, __int128_t& value) {
-    string tmp;
-    is >> tmp;
-
-    value = parse(tmp);
-
-    return is;
 }
 
 // 関数類
@@ -397,18 +274,6 @@ inline void print(const vector<vector<T>>& v, string const& s = " ") noexcept(ex
     rep(i, v.size()) {
         rep(j, v[i].size()) cout << v[i][j] << (j != (ll)v[i].size() - 1 ? s : "\n");
     }
-}
-
-template <typename T>
-inline istream& operator>>(istream& os, vector<T>& v) {
-#ifdef LOCAL
-    assert(v.size() != 0);
-#endif
-    rep(i, v.size()) {
-        cin >> v[i];
-    }
-
-    return os;
 }
 
 /**
@@ -1699,8 +1564,6 @@ ll codeforces_t = -1;
 /* Main Function */
 
 int main() {
-    fastio();
-
     return 0;
 }
 
