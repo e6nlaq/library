@@ -158,7 +158,7 @@ inline constexpr T divup(T a, T b) {
  * @brief 数学的な意味での剰余を計算します（負の数にも対応）
  * @tparam T 整数型
  * @param x 被除数
- * @param m 正の除数 (m > 0)
+ * @param m 0でない除数 (m != 0)
  * @return T x mod m の値（0以上m未満）
  * @note 計算量: O(1)
  * @note 常に0以上m未満の値を返します
