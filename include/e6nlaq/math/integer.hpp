@@ -202,12 +202,12 @@ inline constexpr long long fact(const long long n) {
  * @warning 結果がオーバーフローする可能性があります
  */
 inline unsigned long long pow_ll(unsigned long long x, unsigned long long n) noexcept {
-    unsigned long long ret = 1LL;
+    unsigned long long ret = 1ULL;
     while (n > 0) {
-        if (n & 1LL)
+        if (n & 1)
             ret *= x;
         x *= x;
-        n >>= 1LL;
+        n >>= 1;
     }
 
     return ret;
