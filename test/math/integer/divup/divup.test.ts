@@ -42,7 +42,7 @@ test.concurrent("正の数同士の切り上げ除算", async () => {
     expect(await run(1n, 1n)).toBe(1n);
 });
 
-test.concurrent.todo("負の数を含む切り上げ除算", async () => {
+test.concurrent("負の数を含む切り上げ除算", async () => {
     expect(await run(-10n, 3n)).toBe(-3n); // -3.333... → -3
     expect(await run(10n, -3n)).toBe(-3n); // -3.333... → -3
     expect(await run(-10n, -3n)).toBe(4n); // 3.333... → 4
