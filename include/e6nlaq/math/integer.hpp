@@ -133,9 +133,9 @@ inline bool is_square(const T N) noexcept {
  * @note a や b が負の場合も正の無限大方向に丸めます
  */
 template <std::integral T>
-inline constexpr T divup(T a, T b) {
+inline constexpr T div_ceil(T a, T b) {
     if (b == 0) {
-        throw std::invalid_argument("divup: division by zero");
+        throw std::invalid_argument("div_ceil: division by zero");
     }
 
     T res = a / b;
@@ -215,7 +215,7 @@ inline unsigned long long pow_ll(unsigned long long x, unsigned long long n) noe
  * @note 公式: n(n+1)/2 を使用して実装されています
  * @warning nが大きいとオーバーフローする可能性があります
  */
-inline unsigned long long minisum(const unsigned long long n) noexcept {
+inline unsigned long long sum_to_n(const unsigned long long n) noexcept {
     return n * (n + 1ULL) / 2ULL;
 }
 

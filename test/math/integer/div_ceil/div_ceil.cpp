@@ -8,7 +8,7 @@ int main() {
     while (cases--) {
         long long a, b;
         std::cin >> a >> b;
-        std::cout << e6nlaq::divup(a, b) << '\n';
+        std::cout << e6nlaq::div_ceil(a, b) << '\n';
     }
     return 0;
 }

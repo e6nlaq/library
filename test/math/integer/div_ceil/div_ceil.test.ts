@@ -4,7 +4,7 @@ import { compile, randomCases, run_cases } from "@/util";
 
 beforeAll(
     async () => {
-        await compile(import.meta.dir, "divup.cpp");
+        await compile(import.meta.dir, "div_ceil.cpp");
     },
     { timeout: -1 },
 );
@@ -21,7 +21,7 @@ async function runs(inputs: [bigint, bigint][]) {
     return outs.map((out) => BigInt(out[0]));
 }
 
-function divup_ts(a: bigint, b: bigint): bigint {
+function div_ceil_ts(a: bigint, b: bigint): bigint {
     const q = a / b;
     const r = a % b;
     if (r === 0n) {
@@ -70,7 +70,7 @@ describe("random tests", () => {
             inputs.push([a, b]);
         }
         const results = await runs(inputs);
-        const expected = inputs.map(([a, b]) => divup_ts(a, b));
+        const expected = inputs.map(([a, b]) => div_ceil_ts(a, b));
         expect(results).toStrictEqual(expected);
     });
 
@@ -85,7 +85,7 @@ describe("random tests", () => {
             inputs.push([-a, -b]);
         }
         const results = await runs(inputs);
-        const expected = inputs.map(([a, b]) => divup_ts(a, b));
+        const expected = inputs.map(([a, b]) => div_ceil_ts(a, b));
         expect(results).toStrictEqual(expected);
     });
 });
