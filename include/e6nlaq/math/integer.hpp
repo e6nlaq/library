@@ -1,12 +1,12 @@
 // @e6nlaq/library / (C) 2025 e6nlaq
 
-#include <cstdlib>
 #ifndef E6NLAQ_MATH_INTEGER_HPP
 #define E6NLAQ_MATH_INTEGER_HPP 1
 
 #include <bit>
 #include <cassert>
 #include <concepts>
+#include <cstdlib>
 #include <limits>
 #include <stdexcept>
 
