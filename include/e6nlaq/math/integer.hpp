@@ -138,11 +138,20 @@ inline constexpr T divup(T a, T b) {
         throw std::invalid_argument("divup: division by zero");
     }
 
-    if (a < 0 || b < 0) {
-        throw std::invalid_argument("divup: a or b is negative");
+    // 符号が同じ場合（結果が正）: 切り上げが必要
+    // 符号が異なる場合（結果が負）: 通常の除算で正の無限大方向への丸めになる
+    if ((a >= 0 && b > 0) || (a <= 0 && b < 0)) {
+        // 両方正または両方負の場合
+        if (a >= 0) {
+            return (a + b - 1) / b;
+        } else {
+            // 両方負の場合: 絶対値で計算して正の結果を返す
+            return ((-a) + (-b) - 1) / (-b);
+        }
+    } else {
+        // 符号が異なる場合: 通常の除算
+        return a / b;
     }
-
-    return (a + b - 1) / b;
 }
 
 /**
