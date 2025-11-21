@@ -1,4 +1,3 @@
-// @e6nlaq/library / (C) 2025 e6nlaq
 
 #ifndef E6NLAQ_IOSTREAM_HPP
 #define E6NLAQ_IOSTREAM_HPP 1
@@ -12,7 +11,7 @@ namespace e6nlaq {
 
 #ifdef __GNUC__
 namespace {
-__int128_t parse(const std::string &s) {
+__int128_t parse(const std::string& s) {
     __int128_t ret = 0;
     for (const char c : s) {
         if ('0' <= c && c <= '9') {
@@ -29,12 +28,12 @@ __int128_t parse(const std::string &s) {
 }  // namespace
 
 // https://kenkoooo.hatenablog.com/entry/2016/11/30/163533
-inline std::ostream &operator<<(std::ostream &dest, __int128_t value) {
+inline std::ostream& operator<<(std::ostream& dest, __int128_t value) {
     std::ostream::sentry s(dest);
     if (s) {
         __uint128_t tmp = value < 0 ? -value : value;
         char buffer[128];
-        char *d = std::end(buffer);
+        char* d = std::end(buffer);
         do {
             --d;
             *d = "0123456789"[tmp % 10];
@@ -52,7 +51,7 @@ inline std::ostream &operator<<(std::ostream &dest, __int128_t value) {
     return dest;
 }
 
-inline std::istream &operator>>(std::istream &is, __int128_t &value) {
+inline std::istream& operator>>(std::istream& is, __int128_t& value) {
     std::string tmp;
     is >> tmp;
 
@@ -63,11 +62,11 @@ inline std::istream &operator>>(std::istream &is, __int128_t &value) {
 #endif  // __GNUC__
 
 template <typename T>
-inline std::istream &operator>>(std::istream &is, std::vector<T> &v) {
+inline std::istream& operator>>(std::istream& is, std::vector<T>& v) {
 #if defined(LOCAL) && !defined(ALLOW_ZERO_VEC_CIN)
     assert(v.size() != 0);
 #endif
-    for (auto &elem : v) {
+    for (auto& elem : v) {
         is >> elem;
     }
 

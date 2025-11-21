@@ -1,4 +1,3 @@
-// @e6nlaq/library / (C) 2025 e6nlaq
 
 #ifndef E6NLAQ_MATH_INTEGER_HPP
 #define E6NLAQ_MATH_INTEGER_HPP 1
