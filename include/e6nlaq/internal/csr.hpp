@@ -1,4 +1,3 @@
-// @e6nlaq/library / (C) 2025 e6nlaq
 // This file is a fork of AtCoder Library.
 
 #ifndef E6NLAQ_INTERNAL_CSR_HPP
