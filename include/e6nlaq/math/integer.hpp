@@ -160,6 +160,9 @@ inline constexpr T div_ceil(T a, T b) {
  */
 template <std::integral T>
 inline constexpr T mmod(T x, T m) {
+    if (m == 0) {
+        throw std::invalid_argument("mmod: m must not be zero");
+    }
     m = std::abs(m);
     return (x % m + m) % m;
 }
