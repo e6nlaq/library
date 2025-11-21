@@ -214,7 +214,11 @@ inline unsigned long long pow_ll(unsigned long long x, unsigned long long n) noe
  * @warning nが大きいとオーバーフローする可能性があります
  */
 inline unsigned long long sum_to_n(const unsigned long long n) noexcept {
-    return n * (n + 1ULL) / 2ULL;
+    if (n % 2 == 0) {
+        return (n / 2ULL) * (n + 1ULL);
+    } else {
+        return n * ((n + 1ULL) / 2ULL);
+    }
 }
 
 }  // namespace e6nlaq
