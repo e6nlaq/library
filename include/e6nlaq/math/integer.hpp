@@ -174,15 +174,10 @@ inline constexpr T mmod(T x, T m) {
  * @note 計算量: O(n)
  * @note nが0の場合は1を返します
  * @warning nが大きいとオーバーフローする可能性があります（20! = 2,432,902,008,176,640,000）
- * @throw std::invalid_argument nが負の場合にスローされます
  */
-inline constexpr long long fact(const long long n) {
-    if (n < 0) {
-        throw std::invalid_argument("fact: n must be non-negative");
-    }
-
-    long long res = 1;
-    for (long long i = 1; i <= n; i++) {
+inline constexpr unsigned long long fact(const unsigned long long n) {
+    unsigned long long res = 1;
+    for (unsigned long long i = 2; i <= n; i++) {
         res *= i;
     }
     return res;
