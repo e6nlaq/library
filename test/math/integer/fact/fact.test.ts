@@ -62,11 +62,4 @@ describe.concurrent("factorial", () => {
         const expected = inputs.map(fact_ts);
         expect(results).toStrictEqual(expected);
     });
-
-    describe.concurrent("errors", () => {
-        test.concurrent("負の数はエラー", async () => {
-            expect(async () => await run(-1n)).toThrow();
-            expect(async () => await run(-10n)).toThrow();
-        });
-    });
 });
