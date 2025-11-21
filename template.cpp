@@ -203,11 +203,6 @@ inline int ctoi(const char c) noexcept {
     return 0;
 }
 
-// O(1)
-inline ull minisum(const ull n) noexcept {
-    return n * (n + 1ULL) / 2ULL;
-}
-
 // 数値0埋め
 // O(N)
 inline string zerou(const ull i, string s) noexcept {
@@ -290,20 +285,6 @@ inline void print(const vector<vector<T>>& v, string const& s = " ") noexcept(ex
 inline string srev(string s) noexcept {
     reverse(all(s));
     return s;
-}
-
-// 整数べき乗
-// O(log N)
-inline unsigned long long pow_ll(unsigned long long x, unsigned long long n) noexcept {
-    ull ret = 1LL;
-    while (n > 0) {
-        if (n & 1LL)
-            ret *= x;
-        x *= x;
-        n >>= 1LL;
-    }
-
-    return ret;
 }
 
 template <typename T>
@@ -662,17 +643,6 @@ inline ll csum(const string& s) noexcept {
 /// @return 各桁の和
 inline ll csum(const ll n) noexcept {
     return csum(to_string(n));
-}
-
-/// @brief 階乗を計算する
-/// @param n nの階乗
-/// @return nの階乗
-inline ll fact(const ll n) noexcept {
-    ll ret = 1;
-    rep(i, n) {
-        ret *= i + 1;
-    }
-    return ret;
 }
 
 /// @brief 一次元の累積和を返します
@@ -1351,11 +1321,6 @@ inline void gmerge(CostGraph& g, ull a, ull b, ll c) {
     g[b].emplace_back(make_cost(a, c));
 }
 
-// https://x.gd/a7Yhv
-inline constexpr ll mmod(ll x, ll m) noexcept {
-    return (x % m + m) % m;
-}
-
 // Hash
 constexpr ll HMOD = (1LL << 61LL) - 1LL;
 ll HB = 0;
@@ -1581,11 +1546,6 @@ struct PrimeFact {
         return m;
     }
 };
-
-template <integral T>
-inline constexpr T divup(T a, T b) {
-    return (a + b - 1) / b;
-}
 
 #endif
 
