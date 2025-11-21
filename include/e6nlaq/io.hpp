@@ -1,4 +1,3 @@
-
 #ifndef E6NLAQ_IO_HPP
 #define E6NLAQ_IO_HPP 1
 
