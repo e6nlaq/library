@@ -1,4 +1,3 @@
-
 #ifndef E6NLAQ_IOSTREAM_HPP
 #define E6NLAQ_IOSTREAM_HPP 1
 
