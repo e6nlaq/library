@@ -160,11 +160,17 @@ inline constexpr T div_ceil(T a, T b) {
  */
 template <std::integral T>
 inline constexpr T mmod(T x, T m) {
-    if (m == 0) {
-        throw std::invalid_argument("mmod: m must not be zero");
+    T M = m;
+    if constexpr (std::is_signed_v<T>) {
+        if (m < 0) {
+            if (m == std::numeric_limits<T>::min()) {
+                throw std::domain_error("mmod: m cannot be the minimum value of its type");
+            }
+            M = -m;
+        }
     }
-    m = std::abs(m);
-    return (x % m + m) % m;
+    T r = x % M;
+    return r < 0 ? r + M : r;
 }
 
 /**
