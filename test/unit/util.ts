@@ -4,7 +4,7 @@ import { $ } from "bun";
 export const randomCases = 10000;
 
 export async function compile(dir: string, filename: string, out = "a.out") {
-    await $`g++-14 ${resolve(dir, filename)} -o ${resolve(dir, out)} --std=c++23 -I ${resolve(import.meta.dir, "../include")}`.quiet();
+    await $`g++-14 ${resolve(dir, filename)} -o ${resolve(dir, out)} --std=c++23 -I ${resolve(import.meta.dir, "../../include")}`.quiet();
 }
 
 export type Input = (number | string | bigint)[];
