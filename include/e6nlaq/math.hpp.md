@@ -1,7 +1,20 @@
 ---
 data:
-  _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedDependsOn:
+  - icon: ':warning:'
+    path: include/e6nlaq/internal/math.hpp
+    title: include/e6nlaq/internal/math.hpp
+  - icon: ':warning:'
+    path: include/e6nlaq/math/acl.hpp
+    title: include/e6nlaq/math/acl.hpp
+  - icon: ':warning:'
+    path: include/e6nlaq/math/integer.hpp
+    title: "\u7B26\u53F7\u306A\u3057\u6574\u6570\u306E\u6841\u6570\u3092\u8A08\u7B97\
+      \u3057\u307E\u3059"
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: include/e6nlaq/all.hpp
+    title: include/e6nlaq/all.hpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -23,11 +36,15 @@ data:
   code: '#include "e6nlaq/math/acl.hpp"
 
     #include "e6nlaq/math/integer.hpp"'
-  dependsOn: []
+  dependsOn:
+  - include/e6nlaq/math/acl.hpp
+  - include/e6nlaq/internal/math.hpp
+  - include/e6nlaq/math/integer.hpp
   isVerificationFile: false
   path: include/e6nlaq/math.hpp
-  requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
+  requiredBy:
+  - include/e6nlaq/all.hpp
+  timestamp: '2025-12-10 00:09:00+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: include/e6nlaq/math.hpp

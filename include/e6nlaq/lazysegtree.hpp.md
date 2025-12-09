@@ -1,7 +1,13 @@
 ---
 data:
-  _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedDependsOn:
+  - icon: ':warning:'
+    path: include/e6nlaq/internal/bit.hpp
+    title: include/e6nlaq/internal/bit.hpp
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: include/e6nlaq/all.hpp
+    title: include/e6nlaq/all.hpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -95,11 +101,13 @@ data:
     \        if (k < size) lz[k] = composition(f, lz[k]);\n    }\n    void push(int\
     \ k) {\n        all_apply(2 * k, lz[k]);\n        all_apply(2 * k + 1, lz[k]);\n\
     \        lz[k] = id();\n    }\n};\n\n}  // namespace e6nlaq\n\n#endif  // E6NLAQ_LAZYSEGTREE_HPP\n"
-  dependsOn: []
+  dependsOn:
+  - include/e6nlaq/internal/bit.hpp
   isVerificationFile: false
   path: include/e6nlaq/lazysegtree.hpp
-  requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
+  requiredBy:
+  - include/e6nlaq/all.hpp
+  timestamp: '2025-12-10 00:09:00+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: include/e6nlaq/lazysegtree.hpp

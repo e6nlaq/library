@@ -1,7 +1,22 @@
 ---
 data:
-  _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedDependsOn:
+  - icon: ':warning:'
+    path: include/e6nlaq/internal/bit.hpp
+    title: include/e6nlaq/internal/bit.hpp
+  - icon: ':warning:'
+    path: include/e6nlaq/internal/math.hpp
+    title: include/e6nlaq/internal/math.hpp
+  - icon: ':warning:'
+    path: include/e6nlaq/internal/type_traits.hpp
+    title: include/e6nlaq/internal/type_traits.hpp
+  - icon: ':warning:'
+    path: include/e6nlaq/modint.hpp
+    title: include/e6nlaq/modint.hpp
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: include/e6nlaq/all.hpp
+    title: include/e6nlaq/all.hpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -176,11 +191,16 @@ data:
     \ offset[5] = {\n            0, 0, M1M2M3, 2 * M1M2M3, 3 * M1M2M3};\n        x\
     \ -= offset[diff % 5];\n        c[i] = x;\n    }\n\n    return c;\n}\n\n}  //\
     \ namespace e6nlaq\n\n#endif  // E6NLAQ_CONVOLUTION_HPP\n"
-  dependsOn: []
+  dependsOn:
+  - include/e6nlaq/internal/bit.hpp
+  - include/e6nlaq/modint.hpp
+  - include/e6nlaq/internal/math.hpp
+  - include/e6nlaq/internal/type_traits.hpp
   isVerificationFile: false
   path: include/e6nlaq/convolution.hpp
-  requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
+  requiredBy:
+  - include/e6nlaq/all.hpp
+  timestamp: '2025-12-10 00:09:00+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: include/e6nlaq/convolution.hpp

@@ -1,7 +1,16 @@
 ---
 data:
-  _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedDependsOn:
+  - icon: ':warning:'
+    path: include/e6nlaq/internal/math.hpp
+    title: include/e6nlaq/internal/math.hpp
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: include/e6nlaq/all.hpp
+    title: include/e6nlaq/all.hpp
+  - icon: ':warning:'
+    path: include/e6nlaq/math.hpp
+    title: include/e6nlaq/math.hpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -57,11 +66,14 @@ data:
     \        ans -= 1ULL * n * ((b2 - b) / m);\n        b = b2;\n    }\n    return\
     \ ans + internal::floor_sum_unsigned(n, m, a, b);\n}\n\n}  // namespace e6nlaq\n\
     \n#endif  // E6NLAQ_MATH_HPP\n"
-  dependsOn: []
+  dependsOn:
+  - include/e6nlaq/internal/math.hpp
   isVerificationFile: false
   path: include/e6nlaq/math/acl.hpp
-  requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
+  requiredBy:
+  - include/e6nlaq/math.hpp
+  - include/e6nlaq/all.hpp
+  timestamp: '2025-12-10 00:09:00+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: include/e6nlaq/math/acl.hpp

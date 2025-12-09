@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: include/e6nlaq/io.hpp
+    title: "\u6539\u884C\u3092\u51FA\u529B\u3059\u308B"
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -54,8 +57,9 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: include/e6nlaq/iostream.hpp
-  requiredBy: []
-  timestamp: '2025-12-09 22:47:16+09:00'
+  requiredBy:
+  - include/e6nlaq/io.hpp
+  timestamp: '2025-12-10 00:09:00+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: include/e6nlaq/iostream.hpp

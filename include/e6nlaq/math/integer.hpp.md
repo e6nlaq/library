@@ -1,7 +1,34 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: include/e6nlaq/all.hpp
+    title: include/e6nlaq/all.hpp
+  - icon: ':warning:'
+    path: include/e6nlaq/math.hpp
+    title: include/e6nlaq/math.hpp
+  - icon: ':warning:'
+    path: test/unit/math/integer/digits/digits-int.cpp
+    title: test/unit/math/integer/digits/digits-int.cpp
+  - icon: ':warning:'
+    path: test/unit/math/integer/digits/digits-ll.cpp
+    title: test/unit/math/integer/digits/digits-ll.cpp
+  - icon: ':warning:'
+    path: test/unit/math/integer/div_ceil/div_ceil.cpp
+    title: test/unit/math/integer/div_ceil/div_ceil.cpp
+  - icon: ':warning:'
+    path: test/unit/math/integer/fact/fact.cpp
+    title: test/unit/math/integer/fact/fact.cpp
+  - icon: ':warning:'
+    path: test/unit/math/integer/isqrt/isqrt.cpp
+    title: test/unit/math/integer/isqrt/isqrt.cpp
+  - icon: ':warning:'
+    path: test/unit/math/integer/mmod/mmod.cpp
+    title: test/unit/math/integer/mmod/mmod.cpp
+  - icon: ':warning:'
+    path: test/unit/math/integer/pow_ll/pow_ll.cpp
+    title: test/unit/math/integer/pow_ll/pow_ll.cpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -238,8 +265,17 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: include/e6nlaq/math/integer.hpp
-  requiredBy: []
-  timestamp: '2025-12-09 22:47:16+09:00'
+  requiredBy:
+  - test/unit/math/integer/isqrt/isqrt.cpp
+  - test/unit/math/integer/pow_ll/pow_ll.cpp
+  - test/unit/math/integer/fact/fact.cpp
+  - test/unit/math/integer/div_ceil/div_ceil.cpp
+  - test/unit/math/integer/mmod/mmod.cpp
+  - test/unit/math/integer/digits/digits-int.cpp
+  - test/unit/math/integer/digits/digits-ll.cpp
+  - include/e6nlaq/math.hpp
+  - include/e6nlaq/all.hpp
+  timestamp: '2025-12-10 00:09:00+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: include/e6nlaq/math/integer.hpp

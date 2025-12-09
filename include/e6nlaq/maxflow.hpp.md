@@ -1,7 +1,13 @@
 ---
 data:
-  _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedDependsOn:
+  - icon: ':warning:'
+    path: include/e6nlaq/internal/queue.hpp
+    title: include/e6nlaq/internal/queue.hpp
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: include/e6nlaq/all.hpp
+    title: include/e6nlaq/all.hpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -74,11 +80,13 @@ data:
     \ _edge {\n        int to, rev;\n        Cap cap;\n    };\n    std::vector<std::pair<int,\
     \ int>> pos;\n    std::vector<std::vector<_edge>> g;\n};\n\n}  // namespace e6nlaq\n\
     \n#endif  // E6NLAQ_MAXFLOW_HPP\n"
-  dependsOn: []
+  dependsOn:
+  - include/e6nlaq/internal/queue.hpp
   isVerificationFile: false
   path: include/e6nlaq/maxflow.hpp
-  requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
+  requiredBy:
+  - include/e6nlaq/all.hpp
+  timestamp: '2025-12-10 00:09:00+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: include/e6nlaq/maxflow.hpp

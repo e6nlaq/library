@@ -1,7 +1,13 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: include/e6nlaq/all.hpp
+    title: include/e6nlaq/all.hpp
+  - icon: ':warning:'
+    path: include/e6nlaq/maxflow.hpp
+    title: include/e6nlaq/maxflow.hpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -30,8 +36,10 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: include/e6nlaq/internal/queue.hpp
-  requiredBy: []
-  timestamp: '2025-12-09 22:47:16+09:00'
+  requiredBy:
+  - include/e6nlaq/maxflow.hpp
+  - include/e6nlaq/all.hpp
+  timestamp: '2025-12-10 00:09:00+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: include/e6nlaq/internal/queue.hpp

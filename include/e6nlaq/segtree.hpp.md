@@ -1,7 +1,13 @@
 ---
 data:
-  _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedDependsOn:
+  - icon: ':warning:'
+    path: include/e6nlaq/internal/bit.hpp
+    title: include/e6nlaq/internal/bit.hpp
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: include/e6nlaq/all.hpp
+    title: include/e6nlaq/all.hpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -63,11 +69,13 @@ data:
     \    return 0;\n    }\n\n   private:\n    int _n, size, log;\n    std::vector<S>\
     \ d;\n\n    void update(int k) { d[k] = op(d[2 * k], d[2 * k + 1]); }\n};\n\n\
     }  // namespace e6nlaq\n\n#endif  // E6NLAQ_SEGTREE_HPP\n"
-  dependsOn: []
+  dependsOn:
+  - include/e6nlaq/internal/bit.hpp
   isVerificationFile: false
   path: include/e6nlaq/segtree.hpp
-  requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
+  requiredBy:
+  - include/e6nlaq/all.hpp
+  timestamp: '2025-12-10 00:09:00+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: include/e6nlaq/segtree.hpp

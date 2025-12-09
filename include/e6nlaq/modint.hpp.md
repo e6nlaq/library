@@ -1,7 +1,19 @@
 ---
 data:
-  _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedDependsOn:
+  - icon: ':warning:'
+    path: include/e6nlaq/internal/math.hpp
+    title: include/e6nlaq/internal/math.hpp
+  - icon: ':warning:'
+    path: include/e6nlaq/internal/type_traits.hpp
+    title: include/e6nlaq/internal/type_traits.hpp
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: include/e6nlaq/all.hpp
+    title: include/e6nlaq/all.hpp
+  - icon: ':warning:'
+    path: include/e6nlaq/convolution.hpp
+    title: include/e6nlaq/convolution.hpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -109,11 +121,15 @@ data:
     \ <int id>\nstruct is_dynamic_modint<dynamic_modint<id>> : public std::true_type\
     \ {};\n\ntemplate <class T>\nusing is_dynamic_modint_t = std::enable_if_t<is_dynamic_modint<T>::value>;\n\
     \n}  // namespace internal\n\n}  // namespace e6nlaq\n\n#endif  // E6NLAQ_MODINT_HPP\n"
-  dependsOn: []
+  dependsOn:
+  - include/e6nlaq/internal/math.hpp
+  - include/e6nlaq/internal/type_traits.hpp
   isVerificationFile: false
   path: include/e6nlaq/modint.hpp
-  requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
+  requiredBy:
+  - include/e6nlaq/convolution.hpp
+  - include/e6nlaq/all.hpp
+  timestamp: '2025-12-10 00:09:00+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: include/e6nlaq/modint.hpp

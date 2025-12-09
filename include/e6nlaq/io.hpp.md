@@ -1,6 +1,9 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':warning:'
+    path: include/e6nlaq/iostream.hpp
+    title: include/e6nlaq/iostream.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -62,11 +65,12 @@ data:
     \u5316\u3059\u308B\u305F\u3081\u306E\u8A2D\u5B9A\u3092\u884C\u3046\n */\ninline\
     \ void fastio() noexcept {\n    std::cin.tie(nullptr);\n    std::ios::sync_with_stdio(false);\n\
     }\n\n}  // namespace e6nlaq\n\n#endif  // E6NLAQ_IO_HPP\n"
-  dependsOn: []
+  dependsOn:
+  - include/e6nlaq/iostream.hpp
   isVerificationFile: false
   path: include/e6nlaq/io.hpp
   requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
+  timestamp: '2025-12-10 00:09:00+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: include/e6nlaq/io.hpp

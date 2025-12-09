@@ -1,6 +1,10 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':warning:'
+    path: include/e6nlaq/math/integer.hpp
+    title: "\u7B26\u53F7\u306A\u3057\u6574\u6570\u306E\u6841\u6570\u3092\u8A08\u7B97\
+      \u3057\u307E\u3059"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -17,11 +21,12 @@ data:
     \nint main() {\n    int cases;\n    std::cin >> cases;\n\n    while (cases--)\
     \ {\n        int N;\n        std::cin >> N;\n\n        std::cout << e6nlaq::digits(N)\
     \ << std::endl;\n    }\n\n    return 0;\n}"
-  dependsOn: []
+  dependsOn:
+  - include/e6nlaq/math/integer.hpp
   isVerificationFile: false
   path: test/unit/math/integer/digits/digits-int.cpp
   requiredBy: []
-  timestamp: '2025-12-09 22:47:16+09:00'
+  timestamp: '2025-12-10 00:09:00+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: test/unit/math/integer/digits/digits-int.cpp

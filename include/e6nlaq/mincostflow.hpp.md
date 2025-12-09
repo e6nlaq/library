@@ -1,7 +1,13 @@
 ---
 data:
-  _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedDependsOn:
+  - icon: ':warning:'
+    path: include/e6nlaq/internal/csr.hpp
+    title: include/e6nlaq/internal/csr.hpp
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: include/e6nlaq/all.hpp
+    title: include/e6nlaq/all.hpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -113,11 +119,13 @@ data:
     \            }\n            result.push_back({flow, cost});\n            prev_cost_per_flow\
     \ = d;\n        }\n        return result;\n    }\n};\n\n}  // namespace e6nlaq\n\
     \n#endif  // E6NLAQ_MINCOSTFLOW_HPP\n"
-  dependsOn: []
+  dependsOn:
+  - include/e6nlaq/internal/csr.hpp
   isVerificationFile: false
   path: include/e6nlaq/mincostflow.hpp
-  requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
+  requiredBy:
+  - include/e6nlaq/all.hpp
+  timestamp: '2025-12-10 00:09:00+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: include/e6nlaq/mincostflow.hpp
