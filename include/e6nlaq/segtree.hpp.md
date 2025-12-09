@@ -75,7 +75,7 @@ data:
   path: include/e6nlaq/segtree.hpp
   requiredBy:
   - include/e6nlaq/all.hpp
-  timestamp: '2025-12-10 00:09:00+09:00'
+  timestamp: '2025-12-09 13:48:01+00:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: include/e6nlaq/segtree.hpp
