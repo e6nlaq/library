@@ -1,0 +1,9 @@
+[[languages.cpp.environments]]
+CXX = "g++"
+CXXFLAGS = [
+    "-std=c++23",
+    "-Wall",
+    "-fsanitize=undefined",
+    "-I",
+    "/home/runner/work/library/library/include",
+]
