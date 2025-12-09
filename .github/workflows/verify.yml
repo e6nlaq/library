@@ -18,6 +18,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Pull latest changes
+      run: git pull --rebase
+
     - name: Set up Python
       uses: actions/setup-python@v4
 
