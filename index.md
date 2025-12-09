@@ -1,0 +1,125 @@
+---
+data:
+  libraryCategories:
+  - name: include/e6nlaq
+    pages:
+    - icon: ':warning:'
+      path: include/e6nlaq/all.hpp
+      title: include/e6nlaq/all.hpp
+    - icon: ':warning:'
+      path: include/e6nlaq/convolution.hpp
+      title: include/e6nlaq/convolution.hpp
+    - icon: ':warning:'
+      path: include/e6nlaq/dsu.hpp
+      title: include/e6nlaq/dsu.hpp
+    - icon: ':warning:'
+      path: include/e6nlaq/fenwicktree.hpp
+      title: include/e6nlaq/fenwicktree.hpp
+    - icon: ':warning:'
+      path: include/e6nlaq/io.hpp
+      title: "\u6539\u884C\u3092\u51FA\u529B\u3059\u308B"
+    - icon: ':warning:'
+      path: include/e6nlaq/iostream.hpp
+      title: include/e6nlaq/iostream.hpp
+    - icon: ':warning:'
+      path: include/e6nlaq/lazysegtree.hpp
+      title: include/e6nlaq/lazysegtree.hpp
+    - icon: ':warning:'
+      path: include/e6nlaq/math.hpp
+      title: include/e6nlaq/math.hpp
+    - icon: ':warning:'
+      path: include/e6nlaq/maxflow.hpp
+      title: include/e6nlaq/maxflow.hpp
+    - icon: ':warning:'
+      path: include/e6nlaq/mincostflow.hpp
+      title: include/e6nlaq/mincostflow.hpp
+    - icon: ':warning:'
+      path: include/e6nlaq/modint.hpp
+      title: include/e6nlaq/modint.hpp
+    - icon: ':warning:'
+      path: include/e6nlaq/scc.hpp
+      title: include/e6nlaq/scc.hpp
+    - icon: ':warning:'
+      path: include/e6nlaq/segtree.hpp
+      title: include/e6nlaq/segtree.hpp
+    - icon: ':warning:'
+      path: include/e6nlaq/string.hpp
+      title: include/e6nlaq/string.hpp
+    - icon: ':warning:'
+      path: include/e6nlaq/twosat.hpp
+      title: include/e6nlaq/twosat.hpp
+  - name: include/e6nlaq/internal
+    pages:
+    - icon: ':warning:'
+      path: include/e6nlaq/internal/bit.hpp
+      title: include/e6nlaq/internal/bit.hpp
+    - icon: ':warning:'
+      path: include/e6nlaq/internal/csr.hpp
+      title: include/e6nlaq/internal/csr.hpp
+    - icon: ':warning:'
+      path: include/e6nlaq/internal/math.hpp
+      title: include/e6nlaq/internal/math.hpp
+    - icon: ':warning:'
+      path: include/e6nlaq/internal/queue.hpp
+      title: include/e6nlaq/internal/queue.hpp
+    - icon: ':warning:'
+      path: include/e6nlaq/internal/scc.hpp
+      title: include/e6nlaq/internal/scc.hpp
+    - icon: ':warning:'
+      path: include/e6nlaq/internal/type_traits.hpp
+      title: include/e6nlaq/internal/type_traits.hpp
+  - name: include/e6nlaq/math
+    pages:
+    - icon: ':warning:'
+      path: include/e6nlaq/math/acl.hpp
+      title: include/e6nlaq/math/acl.hpp
+    - icon: ':warning:'
+      path: include/e6nlaq/math/integer.hpp
+      title: "\u7B26\u53F7\u306A\u3057\u6574\u6570\u306E\u6841\u6570\u3092\u8A08\u7B97\
+        \u3057\u307E\u3059"
+  - name: .
+    pages:
+    - icon: ':warning:'
+      path: template.cpp
+      title: "T\u578B\u3092char\u578B\u306B\u5909\u63DB\u3057\u307E\u3059"
+  - name: test/unit/math/integer/digits
+    pages:
+    - icon: ':warning:'
+      path: test/unit/math/integer/digits/digits-int.cpp
+      title: test/unit/math/integer/digits/digits-int.cpp
+    - icon: ':warning:'
+      path: test/unit/math/integer/digits/digits-ll.cpp
+      title: test/unit/math/integer/digits/digits-ll.cpp
+  - name: test/unit/math/integer/div_ceil
+    pages:
+    - icon: ':warning:'
+      path: test/unit/math/integer/div_ceil/div_ceil.cpp
+      title: test/unit/math/integer/div_ceil/div_ceil.cpp
+  - name: test/unit/math/integer/fact
+    pages:
+    - icon: ':warning:'
+      path: test/unit/math/integer/fact/fact.cpp
+      title: test/unit/math/integer/fact/fact.cpp
+  - name: test/unit/math/integer/isqrt
+    pages:
+    - icon: ':warning:'
+      path: test/unit/math/integer/isqrt/isqrt.cpp
+      title: test/unit/math/integer/isqrt/isqrt.cpp
+  - name: test/unit/math/integer/mmod
+    pages:
+    - icon: ':warning:'
+      path: test/unit/math/integer/mmod/mmod.cpp
+      title: test/unit/math/integer/mmod/mmod.cpp
+  - name: test/unit/math/integer/pow_ll
+    pages:
+    - icon: ':warning:'
+      path: test/unit/math/integer/pow_ll/pow_ll.cpp
+      title: test/unit/math/integer/pow_ll/pow_ll.cpp
+  verificationCategories:
+  - name: test/verify
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/verify/example.test.cpp
+      title: test/verify/example.test.cpp
+layout: toppage
+---
