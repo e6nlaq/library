@@ -82,39 +82,6 @@ data:
     - icon: ':warning:'
       path: template.cpp
       title: "T\u578B\u3092char\u578B\u306B\u5909\u63DB\u3057\u307E\u3059"
-  - name: test/unit/math/integer/digits
-    pages:
-    - icon: ':warning:'
-      path: test/unit/math/integer/digits/digits-int.cpp
-      title: test/unit/math/integer/digits/digits-int.cpp
-    - icon: ':warning:'
-      path: test/unit/math/integer/digits/digits-ll.cpp
-      title: test/unit/math/integer/digits/digits-ll.cpp
-  - name: test/unit/math/integer/div_ceil
-    pages:
-    - icon: ':warning:'
-      path: test/unit/math/integer/div_ceil/div_ceil.cpp
-      title: test/unit/math/integer/div_ceil/div_ceil.cpp
-  - name: test/unit/math/integer/fact
-    pages:
-    - icon: ':warning:'
-      path: test/unit/math/integer/fact/fact.cpp
-      title: test/unit/math/integer/fact/fact.cpp
-  - name: test/unit/math/integer/isqrt
-    pages:
-    - icon: ':warning:'
-      path: test/unit/math/integer/isqrt/isqrt.cpp
-      title: test/unit/math/integer/isqrt/isqrt.cpp
-  - name: test/unit/math/integer/mmod
-    pages:
-    - icon: ':warning:'
-      path: test/unit/math/integer/mmod/mmod.cpp
-      title: test/unit/math/integer/mmod/mmod.cpp
-  - name: test/unit/math/integer/pow_ll
-    pages:
-    - icon: ':warning:'
-      path: test/unit/math/integer/pow_ll/pow_ll.cpp
-      title: test/unit/math/integer/pow_ll/pow_ll.cpp
   verificationCategories:
   - name: test/verify
     pages:

@@ -59,7 +59,7 @@ data:
   path: include/e6nlaq/iostream.hpp
   requiredBy:
   - include/e6nlaq/io.hpp
-  timestamp: '2025-12-09 15:09:37+00:00'
+  timestamp: '2025-12-10 23:21:44+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: include/e6nlaq/iostream.hpp
