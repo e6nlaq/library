@@ -1,7 +1,8 @@
+#pragma once
+
 // This file is a fork of AtCoder Library.
 
-#ifndef E6NLAQ_INTERNAL_TYPE_TRAITS_HPP
-#define E6NLAQ_INTERNAL_TYPE_TRAITS_HPP 1
+#define E6NLAQ_INTERNAL_TYPE_TRAITS_HPP
 
 #include <cassert>
 #include <type_traits>
@@ -98,5 +99,3 @@ using to_unsigned_t = typename to_unsigned<T>::type;
 }  // namespace internal
 
 }  // namespace e6nlaq
-
-#endif  // E6NLAQ_INTERNAL_TYPE_TRAITS_HPP

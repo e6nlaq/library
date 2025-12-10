@@ -1,7 +1,8 @@
+#pragma once
+
 // This file is a fork of AtCoder Library.
 
-#ifndef E6NLAQ_INTERNAL_MATH_HPP
-#define E6NLAQ_INTERNAL_MATH_HPP 1
+#define E6NLAQ_INTERNAL_MATH_HPP
 
 #include <utility>
 
@@ -212,5 +213,3 @@ unsigned long long floor_sum_unsigned(unsigned long long n,
 }  // namespace internal
 
 }  // namespace e6nlaq
-
-#endif  // E6NLAQ_INTERNAL_MATH_HPP

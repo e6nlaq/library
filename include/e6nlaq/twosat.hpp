@@ -1,7 +1,8 @@
+#pragma once
+
 // This file is a fork of AtCoder Library.
 
-#ifndef E6NLAQ_TWOSAT_HPP
-#define E6NLAQ_TWOSAT_HPP 1
+#define E6NLAQ_TWOSAT_HPP
 
 #include <cassert>
 #include <vector>
@@ -42,5 +43,3 @@ struct two_sat {
 };
 
 }  // namespace e6nlaq
-
-#endif  // E6NLAQ_TWOSAT_HPP

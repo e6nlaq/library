@@ -1,7 +1,8 @@
+#pragma once
+
 // This file is a fork of AtCoder Library.
 
-#ifndef E6NLAQ_CONVOLUTION_HPP
-#define E6NLAQ_CONVOLUTION_HPP 1
+#define E6NLAQ_CONVOLUTION_HPP
 
 #include <algorithm>
 #include <array>
@@ -334,5 +335,3 @@ std::vector<long long> convolution_ll(const std::vector<long long>& a,
 }
 
 }  // namespace e6nlaq
-
-#endif  // E6NLAQ_CONVOLUTION_HPP

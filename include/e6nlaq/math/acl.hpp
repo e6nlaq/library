@@ -1,7 +1,8 @@
+#pragma once
+
 // This file is a fork of AtCoder Library.
 
-#ifndef E6NLAQ_MATH_ACL_HPP
-#define E6NLAQ_MATH_ACL_HPP 1
+#define E6NLAQ_MATH_ACL_HPP
 
 #include <algorithm>
 #include <cassert>
@@ -99,5 +100,3 @@ inline long long floor_sum(long long n, long long m, long long a, long long b) {
 }
 
 }  // namespace e6nlaq
-
-#endif  // E6NLAQ_MATH_HPP

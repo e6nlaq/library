@@ -1,5 +1,6 @@
-#ifndef E6NLAQ_IOSTREAM_HPP
-#define E6NLAQ_IOSTREAM_HPP 1
+#pragma once
+
+#define E6NLAQ_IOSTREAM_HPP
 
 #include <cassert>
 #include <iostream>
@@ -73,5 +74,3 @@ inline std::istream& operator>>(std::istream& is, std::vector<T>& v) {
 }
 
 }  // namespace e6nlaq
-
-#endif  // E6NLAQ_IOSTREAM_HPP

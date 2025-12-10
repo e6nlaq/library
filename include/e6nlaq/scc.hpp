@@ -1,7 +1,8 @@
+#pragma once
+
 // This file is a fork of AtCoder Library.
 
-#ifndef E6NLAQ_SCC_HPP
-#define E6NLAQ_SCC_HPP 1
+#define E6NLAQ_SCC_HPP
 
 #include <cassert>
 #include <vector>
@@ -29,5 +30,3 @@ struct scc_graph {
 };
 
 }  // namespace e6nlaq
-
-#endif  // E6NLAQ_SCC_HPP

@@ -1,7 +1,8 @@
+#pragma once
+
 // This file is a fork of AtCoder Library.
 
-#ifndef E6NLAQ_DSU_HPP
-#define E6NLAQ_DSU_HPP 1
+#define E6NLAQ_DSU_HPP
 
 #include <algorithm>
 #include <cassert>
@@ -74,5 +75,3 @@ struct dsu {
 };
 
 }  // namespace e6nlaq
-
-#endif  // E6NLAQ_DSU_HPP

@@ -1,7 +1,8 @@
+#pragma once
+
 // This file is a fork of AtCoder Library.
 
-#ifndef E6NLAQ_STRING_HPP
-#define E6NLAQ_STRING_HPP 1
+#define E6NLAQ_STRING_HPP
 
 #include <algorithm>
 #include <cassert>
@@ -275,5 +276,3 @@ inline std::vector<int> z_algorithm(const std::string& s) {
 }
 
 }  // namespace e6nlaq
-
-#endif  // E6NLAQ_STRING_HPP

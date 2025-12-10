@@ -1,7 +1,8 @@
+#pragma once
+
 // This file is a fork of AtCoder Library.
 
-#ifndef E6NLAQ_SEGTREE_HPP
-#define E6NLAQ_SEGTREE_HPP 1
+#define E6NLAQ_SEGTREE_HPP
 
 #include <cassert>
 #include <functional>
@@ -126,5 +127,3 @@ struct segtree {
 };
 
 }  // namespace e6nlaq
-
-#endif  // E6NLAQ_SEGTREE_HPP

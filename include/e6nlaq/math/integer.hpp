@@ -1,5 +1,6 @@
-#ifndef E6NLAQ_MATH_INTEGER_HPP
-#define E6NLAQ_MATH_INTEGER_HPP 1
+#pragma once
+
+#define E6NLAQ_MATH_INTEGER_HPP
 
 #include <bit>
 #include <cassert>
@@ -226,5 +227,3 @@ inline unsigned long long sum_to_n(const unsigned long long n) noexcept {
 }
 
 }  // namespace e6nlaq
-
-#endif  // E6NLAQ_MATH_INTEGER_HPP

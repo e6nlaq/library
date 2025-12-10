@@ -1,7 +1,8 @@
+#pragma once
+
 // This file is a fork of AtCoder Library.
 
-#ifndef E6NLAQ_LAZYSEGTREE_HPP
-#define E6NLAQ_LAZYSEGTREE_HPP 1
+#define E6NLAQ_LAZYSEGTREE_HPP
 
 #include <cassert>
 #include <functional>
@@ -218,5 +219,3 @@ struct lazy_segtree {
 };
 
 }  // namespace e6nlaq
-
-#endif  // E6NLAQ_LAZYSEGTREE_HPP

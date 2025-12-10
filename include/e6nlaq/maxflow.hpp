@@ -1,7 +1,8 @@
+#pragma once
+
 // This file is a fork of AtCoder Library.
 
-#ifndef E6NLAQ_MAXFLOW_HPP
-#define E6NLAQ_MAXFLOW_HPP 1
+#define E6NLAQ_MAXFLOW_HPP
 
 #include <algorithm>
 #include <cassert>
@@ -149,5 +150,3 @@ struct mf_graph {
 };
 
 }  // namespace e6nlaq
-
-#endif  // E6NLAQ_MAXFLOW_HPP

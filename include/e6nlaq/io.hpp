@@ -1,5 +1,6 @@
-#ifndef E6NLAQ_IO_HPP
-#define E6NLAQ_IO_HPP 1
+#pragma once
+
+#define E6NLAQ_IO_HPP
 
 #include <concepts>
 #include <iostream>
@@ -94,5 +95,3 @@ inline void fastio() noexcept {
 }
 
 }  // namespace e6nlaq
-
-#endif  // E6NLAQ_IO_HPP

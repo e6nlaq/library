@@ -1,7 +1,8 @@
+#pragma once
+
 // This file is a fork of AtCoder Library.
 
-#ifndef E6NLAQ_FENWICKTREE_HPP
-#define E6NLAQ_FENWICKTREE_HPP 1
+#define E6NLAQ_FENWICKTREE_HPP
 
 #include <cassert>
 #include <vector>
@@ -48,5 +49,3 @@ struct fenwick_tree {
 };
 
 }  // namespace e6nlaq
-
-#endif  // E6NLAQ_FENWICKTREE_HPP

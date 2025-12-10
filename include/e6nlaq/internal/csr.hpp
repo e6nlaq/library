@@ -1,7 +1,8 @@
+#pragma once
+
 // This file is a fork of AtCoder Library.
 
-#ifndef E6NLAQ_INTERNAL_CSR_HPP
-#define E6NLAQ_INTERNAL_CSR_HPP 1
+#define E6NLAQ_INTERNAL_CSR_HPP
 
 #include <algorithm>
 #include <utility>
@@ -32,5 +33,3 @@ struct csr {
 }  // namespace internal
 
 }  // namespace e6nlaq
-
-#endif  // E6NLAQ_INTERNAL_CSR_HPP

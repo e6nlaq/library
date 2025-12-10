@@ -9,5 +9,11 @@
         ".vscode-insiders",
         "template.cpp",
         "bun.lock"
+    ],
+    "cSpell.words": [
+        "fenwick",
+        "FENWICKTREE",
+        "MINCOSTFLOW",
+        "TWOSAT"
     ]
 }

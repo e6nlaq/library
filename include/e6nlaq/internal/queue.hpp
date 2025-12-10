@@ -1,7 +1,8 @@
+#pragma once
+
 // This file is a fork of AtCoder Library.
 
-#ifndef E6NLAQ_INTERNAL_QUEUE_HPP
-#define E6NLAQ_INTERNAL_QUEUE_HPP 1
+#define E6NLAQ_INTERNAL_QUEUE_HPP
 
 #include <vector>
 
@@ -28,5 +29,3 @@ struct simple_queue {
 }  // namespace internal
 
 }  // namespace e6nlaq
-
-#endif  // E6NLAQ_INTERNAL_QUEUE_HPP

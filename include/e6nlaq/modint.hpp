@@ -1,7 +1,8 @@
+#pragma once
+
 // This file is a fork of AtCoder Library.
 
-#ifndef E6NLAQ_MODINT_HPP
-#define E6NLAQ_MODINT_HPP 1
+#define E6NLAQ_MODINT_HPP
 
 #include <cassert>
 #include <type_traits>
@@ -273,5 +274,3 @@ using is_dynamic_modint_t = std::enable_if_t<is_dynamic_modint<T>::value>;
 }  // namespace internal
 
 }  // namespace e6nlaq
-
-#endif  // E6NLAQ_MODINT_HPP
