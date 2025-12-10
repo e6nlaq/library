@@ -6,9 +6,6 @@ data:
     path: include/e6nlaq/all.hpp
     title: include/e6nlaq/all.hpp
   - icon: ':warning:'
-    path: include/e6nlaq/all.hpp
-    title: include/e6nlaq/all.hpp
-  - icon: ':warning:'
     path: include/e6nlaq/internal/scc.hpp
     title: include/e6nlaq/internal/scc.hpp
   - icon: ':warning:'
@@ -26,28 +23,27 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"include/e6nlaq/internal/csr.hpp\"\n// This file is a fork\
-    \ of AtCoder Library.\n\n#ifndef E6NLAQ_INTERNAL_CSR_HPP\n#define E6NLAQ_INTERNAL_CSR_HPP\
-    \ 1\n\n#include <algorithm>\n#include <utility>\n#include <vector>\n\nnamespace\
-    \ e6nlaq {\nnamespace internal {\n\ntemplate <class E>\nstruct csr {\n    std::vector<int>\
+  bundledCode: "#line 2 \"include/e6nlaq/internal/csr.hpp\"\n\n// This file is a fork\
+    \ of AtCoder Library.\n\n#define E6NLAQ_INTERNAL_CSR_HPP\n\n#include <algorithm>\n\
+    #include <utility>\n#include <vector>\n\nnamespace e6nlaq {\nnamespace internal\
+    \ {\n\ntemplate <class E>\nstruct csr {\n    std::vector<int> start;\n    std::vector<E>\
+    \ elist;\n    explicit csr(int n, const std::vector<std::pair<int, E>>& edges)\n\
+    \        : start(n + 1), elist(edges.size()) {\n        for (auto e : edges) {\n\
+    \            start[e.first + 1]++;\n        }\n        for (int i = 1; i <= n;\
+    \ i++) {\n            start[i] += start[i - 1];\n        }\n        auto counter\
+    \ = start;\n        for (auto e : edges) {\n            elist[counter[e.first]++]\
+    \ = e.second;\n        }\n    }\n};\n\n}  // namespace internal\n\n}  // namespace\
+    \ e6nlaq\n"
+  code: "#pragma once\n\n// This file is a fork of AtCoder Library.\n\n#define E6NLAQ_INTERNAL_CSR_HPP\n\
+    \n#include <algorithm>\n#include <utility>\n#include <vector>\n\nnamespace e6nlaq\
+    \ {\nnamespace internal {\n\ntemplate <class E>\nstruct csr {\n    std::vector<int>\
     \ start;\n    std::vector<E> elist;\n    explicit csr(int n, const std::vector<std::pair<int,\
     \ E>>& edges)\n        : start(n + 1), elist(edges.size()) {\n        for (auto\
     \ e : edges) {\n            start[e.first + 1]++;\n        }\n        for (int\
     \ i = 1; i <= n; i++) {\n            start[i] += start[i - 1];\n        }\n  \
     \      auto counter = start;\n        for (auto e : edges) {\n            elist[counter[e.first]++]\
     \ = e.second;\n        }\n    }\n};\n\n}  // namespace internal\n\n}  // namespace\
-    \ e6nlaq\n\n#endif  // E6NLAQ_INTERNAL_CSR_HPP\n"
-  code: "// This file is a fork of AtCoder Library.\n\n#ifndef E6NLAQ_INTERNAL_CSR_HPP\n\
-    #define E6NLAQ_INTERNAL_CSR_HPP 1\n\n#include <algorithm>\n#include <utility>\n\
-    #include <vector>\n\nnamespace e6nlaq {\nnamespace internal {\n\ntemplate <class\
-    \ E>\nstruct csr {\n    std::vector<int> start;\n    std::vector<E> elist;\n \
-    \   explicit csr(int n, const std::vector<std::pair<int, E>>& edges)\n       \
-    \ : start(n + 1), elist(edges.size()) {\n        for (auto e : edges) {\n    \
-    \        start[e.first + 1]++;\n        }\n        for (int i = 1; i <= n; i++)\
-    \ {\n            start[i] += start[i - 1];\n        }\n        auto counter =\
-    \ start;\n        for (auto e : edges) {\n            elist[counter[e.first]++]\
-    \ = e.second;\n        }\n    }\n};\n\n}  // namespace internal\n\n}  // namespace\
-    \ e6nlaq\n\n#endif  // E6NLAQ_INTERNAL_CSR_HPP\n"
+    \ e6nlaq\n"
   dependsOn: []
   isVerificationFile: false
   path: include/e6nlaq/internal/csr.hpp
@@ -57,8 +53,7 @@ data:
   - include/e6nlaq/scc.hpp
   - include/e6nlaq/mincostflow.hpp
   - include/e6nlaq/all.hpp
-  - include/e6nlaq/all.hpp
-  timestamp: '2025-12-10 23:30:30+09:00'
+  timestamp: '2025-12-11 00:03:52+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: include/e6nlaq/internal/csr.hpp

@@ -31,7 +31,7 @@ data:
   isVerificationFile: true
   path: test/verify/example.test.cpp
   requiredBy: []
-  timestamp: '2025-12-10 23:30:30+09:00'
+  timestamp: '2025-12-11 00:03:52+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/example.test.cpp

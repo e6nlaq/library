@@ -14,32 +14,31 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"include/e6nlaq/internal/queue.hpp\"\n// This file is a fork\
-    \ of AtCoder Library.\n\n#ifndef E6NLAQ_INTERNAL_QUEUE_HPP\n#define E6NLAQ_INTERNAL_QUEUE_HPP\
-    \ 1\n\n#include <vector>\n\nnamespace e6nlaq {\n\nnamespace internal {\n\ntemplate\
+  bundledCode: "#line 2 \"include/e6nlaq/internal/queue.hpp\"\n\n// This file is a\
+    \ fork of AtCoder Library.\n\n#define E6NLAQ_INTERNAL_QUEUE_HPP\n\n#include <vector>\n\
+    \nnamespace e6nlaq {\n\nnamespace internal {\n\ntemplate <class T>\nstruct simple_queue\
+    \ {\n    std::vector<T> payload;\n    int pos = 0;\n    void reserve(int n) {\
+    \ payload.reserve(n); }\n    int size() const { return int(payload.size()) - pos;\
+    \ }\n    bool empty() const { return pos == int(payload.size()); }\n    void push(const\
+    \ T& t) { payload.push_back(t); }\n    T& front() { return payload[pos]; }\n \
+    \   void clear() {\n        payload.clear();\n        pos = 0;\n    }\n    void\
+    \ pop() { pos++; }\n};\n\n}  // namespace internal\n\n}  // namespace e6nlaq\n"
+  code: "#pragma once\n\n// This file is a fork of AtCoder Library.\n\n#define E6NLAQ_INTERNAL_QUEUE_HPP\n\
+    \n#include <vector>\n\nnamespace e6nlaq {\n\nnamespace internal {\n\ntemplate\
     \ <class T>\nstruct simple_queue {\n    std::vector<T> payload;\n    int pos =\
     \ 0;\n    void reserve(int n) { payload.reserve(n); }\n    int size() const {\
     \ return int(payload.size()) - pos; }\n    bool empty() const { return pos ==\
     \ int(payload.size()); }\n    void push(const T& t) { payload.push_back(t); }\n\
     \    T& front() { return payload[pos]; }\n    void clear() {\n        payload.clear();\n\
     \        pos = 0;\n    }\n    void pop() { pos++; }\n};\n\n}  // namespace internal\n\
-    \n}  // namespace e6nlaq\n\n#endif  // E6NLAQ_INTERNAL_QUEUE_HPP\n"
-  code: "// This file is a fork of AtCoder Library.\n\n#ifndef E6NLAQ_INTERNAL_QUEUE_HPP\n\
-    #define E6NLAQ_INTERNAL_QUEUE_HPP 1\n\n#include <vector>\n\nnamespace e6nlaq {\n\
-    \nnamespace internal {\n\ntemplate <class T>\nstruct simple_queue {\n    std::vector<T>\
-    \ payload;\n    int pos = 0;\n    void reserve(int n) { payload.reserve(n); }\n\
-    \    int size() const { return int(payload.size()) - pos; }\n    bool empty()\
-    \ const { return pos == int(payload.size()); }\n    void push(const T& t) { payload.push_back(t);\
-    \ }\n    T& front() { return payload[pos]; }\n    void clear() {\n        payload.clear();\n\
-    \        pos = 0;\n    }\n    void pop() { pos++; }\n};\n\n}  // namespace internal\n\
-    \n}  // namespace e6nlaq\n\n#endif  // E6NLAQ_INTERNAL_QUEUE_HPP\n"
+    \n}  // namespace e6nlaq\n"
   dependsOn: []
   isVerificationFile: false
   path: include/e6nlaq/internal/queue.hpp
   requiredBy:
   - include/e6nlaq/maxflow.hpp
   - include/e6nlaq/all.hpp
-  timestamp: '2025-12-10 23:30:30+09:00'
+  timestamp: '2025-12-11 00:03:52+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: include/e6nlaq/internal/queue.hpp

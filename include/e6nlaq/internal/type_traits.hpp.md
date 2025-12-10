@@ -20,28 +20,27 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"include/e6nlaq/internal/type_traits.hpp\"\n// This file\
-    \ is a fork of AtCoder Library.\n\n#ifndef E6NLAQ_INTERNAL_TYPE_TRAITS_HPP\n#define\
-    \ E6NLAQ_INTERNAL_TYPE_TRAITS_HPP 1\n\n#include <cassert>\n#include <type_traits>\n\
-    \nnamespace e6nlaq {\n\nnamespace internal {\n\n#ifndef _MSC_VER\ntemplate <class\
-    \ T>\nusing is_signed_int128 =\n    typename std::conditional<std::is_same<T,\
-    \ __int128_t>::value ||\n                                  std::is_same<T, __int128>::value,\n\
-    \                              std::true_type,\n                             \
-    \ std::false_type>::type;\n\ntemplate <class T>\nusing is_unsigned_int128 =\n\
-    \    typename std::conditional<std::is_same<T, __uint128_t>::value ||\n      \
-    \                            std::is_same<T, unsigned __int128>::value,\n    \
-    \                          std::true_type,\n                              std::false_type>::type;\n\
-    \ntemplate <class T>\nusing make_unsigned_int128 =\n    typename std::conditional<std::is_same<T,\
-    \ __int128_t>::value,\n                              __uint128_t,\n          \
-    \                    unsigned __int128>;\n\ntemplate <class T>\nusing is_integral\
-    \ = typename std::conditional<std::is_integral<T>::value ||\n                \
-    \                                  is_signed_int128<T>::value ||\n           \
-    \                                       is_unsigned_int128<T>::value,\n      \
-    \                                        std::true_type,\n                   \
-    \                           std::false_type>::type;\n\ntemplate <class T>\nusing\
-    \ is_signed_int = typename std::conditional<(is_integral<T>::value &&\n      \
-    \                                           std::is_signed<T>::value) ||\n   \
-    \                                                 is_signed_int128<T>::value,\n\
+  bundledCode: "#line 2 \"include/e6nlaq/internal/type_traits.hpp\"\n\n// This file\
+    \ is a fork of AtCoder Library.\n\n#define E6NLAQ_INTERNAL_TYPE_TRAITS_HPP\n\n\
+    #include <cassert>\n#include <type_traits>\n\nnamespace e6nlaq {\n\nnamespace\
+    \ internal {\n\n#ifndef _MSC_VER\ntemplate <class T>\nusing is_signed_int128 =\n\
+    \    typename std::conditional<std::is_same<T, __int128_t>::value ||\n       \
+    \                           std::is_same<T, __int128>::value,\n              \
+    \                std::true_type,\n                              std::false_type>::type;\n\
+    \ntemplate <class T>\nusing is_unsigned_int128 =\n    typename std::conditional<std::is_same<T,\
+    \ __uint128_t>::value ||\n                                  std::is_same<T, unsigned\
+    \ __int128>::value,\n                              std::true_type,\n         \
+    \                     std::false_type>::type;\n\ntemplate <class T>\nusing make_unsigned_int128\
+    \ =\n    typename std::conditional<std::is_same<T, __int128_t>::value,\n     \
+    \                         __uint128_t,\n                              unsigned\
+    \ __int128>;\n\ntemplate <class T>\nusing is_integral = typename std::conditional<std::is_integral<T>::value\
+    \ ||\n                                                  is_signed_int128<T>::value\
+    \ ||\n                                                  is_unsigned_int128<T>::value,\n\
+    \                                              std::true_type,\n             \
+    \                                 std::false_type>::type;\n\ntemplate <class T>\n\
+    using is_signed_int = typename std::conditional<(is_integral<T>::value &&\n  \
+    \                                               std::is_signed<T>::value) ||\n\
+    \                                                    is_signed_int128<T>::value,\n\
     \                                                std::true_type,\n           \
     \                                     std::false_type>::type;\n\ntemplate <class\
     \ T>\nusing is_unsigned_int =\n    typename std::conditional<(is_integral<T>::value\
@@ -65,28 +64,27 @@ data:
     template <class T>\nusing is_signed_int_t = std::enable_if_t<is_signed_int<T>::value>;\n\
     \ntemplate <class T>\nusing is_unsigned_int_t = std::enable_if_t<is_unsigned_int<T>::value>;\n\
     \ntemplate <class T>\nusing to_unsigned_t = typename to_unsigned<T>::type;\n\n\
-    }  // namespace internal\n\n}  // namespace e6nlaq\n\n#endif  // E6NLAQ_INTERNAL_TYPE_TRAITS_HPP\n"
-  code: "// This file is a fork of AtCoder Library.\n\n#ifndef E6NLAQ_INTERNAL_TYPE_TRAITS_HPP\n\
-    #define E6NLAQ_INTERNAL_TYPE_TRAITS_HPP 1\n\n#include <cassert>\n#include <type_traits>\n\
-    \nnamespace e6nlaq {\n\nnamespace internal {\n\n#ifndef _MSC_VER\ntemplate <class\
-    \ T>\nusing is_signed_int128 =\n    typename std::conditional<std::is_same<T,\
-    \ __int128_t>::value ||\n                                  std::is_same<T, __int128>::value,\n\
-    \                              std::true_type,\n                             \
-    \ std::false_type>::type;\n\ntemplate <class T>\nusing is_unsigned_int128 =\n\
-    \    typename std::conditional<std::is_same<T, __uint128_t>::value ||\n      \
-    \                            std::is_same<T, unsigned __int128>::value,\n    \
-    \                          std::true_type,\n                              std::false_type>::type;\n\
-    \ntemplate <class T>\nusing make_unsigned_int128 =\n    typename std::conditional<std::is_same<T,\
-    \ __int128_t>::value,\n                              __uint128_t,\n          \
-    \                    unsigned __int128>;\n\ntemplate <class T>\nusing is_integral\
-    \ = typename std::conditional<std::is_integral<T>::value ||\n                \
-    \                                  is_signed_int128<T>::value ||\n           \
-    \                                       is_unsigned_int128<T>::value,\n      \
-    \                                        std::true_type,\n                   \
-    \                           std::false_type>::type;\n\ntemplate <class T>\nusing\
-    \ is_signed_int = typename std::conditional<(is_integral<T>::value &&\n      \
-    \                                           std::is_signed<T>::value) ||\n   \
-    \                                                 is_signed_int128<T>::value,\n\
+    }  // namespace internal\n\n}  // namespace e6nlaq\n"
+  code: "#pragma once\n\n// This file is a fork of AtCoder Library.\n\n#define E6NLAQ_INTERNAL_TYPE_TRAITS_HPP\n\
+    \n#include <cassert>\n#include <type_traits>\n\nnamespace e6nlaq {\n\nnamespace\
+    \ internal {\n\n#ifndef _MSC_VER\ntemplate <class T>\nusing is_signed_int128 =\n\
+    \    typename std::conditional<std::is_same<T, __int128_t>::value ||\n       \
+    \                           std::is_same<T, __int128>::value,\n              \
+    \                std::true_type,\n                              std::false_type>::type;\n\
+    \ntemplate <class T>\nusing is_unsigned_int128 =\n    typename std::conditional<std::is_same<T,\
+    \ __uint128_t>::value ||\n                                  std::is_same<T, unsigned\
+    \ __int128>::value,\n                              std::true_type,\n         \
+    \                     std::false_type>::type;\n\ntemplate <class T>\nusing make_unsigned_int128\
+    \ =\n    typename std::conditional<std::is_same<T, __int128_t>::value,\n     \
+    \                         __uint128_t,\n                              unsigned\
+    \ __int128>;\n\ntemplate <class T>\nusing is_integral = typename std::conditional<std::is_integral<T>::value\
+    \ ||\n                                                  is_signed_int128<T>::value\
+    \ ||\n                                                  is_unsigned_int128<T>::value,\n\
+    \                                              std::true_type,\n             \
+    \                                 std::false_type>::type;\n\ntemplate <class T>\n\
+    using is_signed_int = typename std::conditional<(is_integral<T>::value &&\n  \
+    \                                               std::is_signed<T>::value) ||\n\
+    \                                                    is_signed_int128<T>::value,\n\
     \                                                std::true_type,\n           \
     \                                     std::false_type>::type;\n\ntemplate <class\
     \ T>\nusing is_unsigned_int =\n    typename std::conditional<(is_integral<T>::value\
@@ -110,7 +108,7 @@ data:
     template <class T>\nusing is_signed_int_t = std::enable_if_t<is_signed_int<T>::value>;\n\
     \ntemplate <class T>\nusing is_unsigned_int_t = std::enable_if_t<is_unsigned_int<T>::value>;\n\
     \ntemplate <class T>\nusing to_unsigned_t = typename to_unsigned<T>::type;\n\n\
-    }  // namespace internal\n\n}  // namespace e6nlaq\n\n#endif  // E6NLAQ_INTERNAL_TYPE_TRAITS_HPP\n"
+    }  // namespace internal\n\n}  // namespace e6nlaq\n"
   dependsOn: []
   isVerificationFile: false
   path: include/e6nlaq/internal/type_traits.hpp
@@ -119,7 +117,7 @@ data:
   - include/e6nlaq/convolution.hpp
   - include/e6nlaq/modint.hpp
   - include/e6nlaq/all.hpp
-  timestamp: '2025-12-10 23:30:30+09:00'
+  timestamp: '2025-12-11 00:03:52+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: include/e6nlaq/internal/type_traits.hpp
