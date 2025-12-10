@@ -1,2 +1,2 @@
-#include "e6nlaq/math/acl.hpp"
-#include "e6nlaq/math/integer.hpp"
+#include "math/acl.hpp"
+#include "math/integer.hpp"

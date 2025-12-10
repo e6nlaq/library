@@ -8,7 +8,7 @@
 #include <limits>
 #include <vector>
 
-#include "e6nlaq/internal/queue.hpp"
+#include "internal/queue.hpp"
 
 namespace e6nlaq {
 

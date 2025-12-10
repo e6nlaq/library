@@ -6,8 +6,8 @@
 #include <cassert>
 #include <type_traits>
 
-#include "e6nlaq/internal/math.hpp"
-#include "e6nlaq/internal/type_traits.hpp"
+#include "internal/math.hpp"
+#include "internal/type_traits.hpp"
 
 namespace e6nlaq {
 

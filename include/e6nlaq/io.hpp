@@ -4,7 +4,7 @@
 #include <concepts>
 #include <iostream>
 
-#include "e6nlaq/iostream.hpp"
+#include "iostream.hpp"
 
 namespace e6nlaq {
 /**

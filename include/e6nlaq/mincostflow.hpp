@@ -8,7 +8,7 @@
 #include <limits>
 #include <vector>
 
-#include "e6nlaq/internal/csr.hpp"
+#include "internal/csr.hpp"
 
 namespace e6nlaq {
 

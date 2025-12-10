@@ -6,7 +6,7 @@
 #include <cassert>
 #include <vector>
 
-#include "e6nlaq/internal/type_traits.hpp"
+#include "internal/type_traits.hpp"
 
 namespace e6nlaq {
 

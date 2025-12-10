@@ -8,7 +8,7 @@
 #include <tuple>
 #include <vector>
 
-#include "e6nlaq/internal/math.hpp"
+#include "../internal/math.hpp"
 
 namespace e6nlaq {
 

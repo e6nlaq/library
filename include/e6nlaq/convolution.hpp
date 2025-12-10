@@ -9,8 +9,8 @@
 #include <type_traits>
 #include <vector>
 
-#include "e6nlaq/internal/bit.hpp"
-#include "e6nlaq/modint.hpp"
+#include "internal/bit.hpp"
+#include "modint.hpp"
 
 namespace e6nlaq {
 

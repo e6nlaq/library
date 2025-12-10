@@ -7,7 +7,7 @@
 #include <functional>
 #include <vector>
 
-#include "e6nlaq/internal/bit.hpp"
+#include "internal/bit.hpp"
 
 namespace e6nlaq {
 

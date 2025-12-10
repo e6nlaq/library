@@ -7,7 +7,7 @@
 #include <utility>
 #include <vector>
 
-#include "e6nlaq/internal/csr.hpp"
+#include "csr.hpp"
 
 namespace e6nlaq {
 namespace internal {
