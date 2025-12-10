@@ -1,0 +1,3 @@
+exclude: ['test/unit']
+title: e6nlaq/library
+theme: jekyll-theme-hacker
