@@ -26,10 +26,10 @@ data:
     \ #ifdef / #ifndef other than include guards\n"
   code: "// This file is a fork of AtCoder Library.\n\n#ifndef E6NLAQ_LAZYSEGTREE_HPP\n\
     #define E6NLAQ_LAZYSEGTREE_HPP 1\n\n#include <cassert>\n#include <functional>\n\
-    #include <vector>\n\n#include \"e6nlaq/internal/bit.hpp\"\n\nnamespace e6nlaq\
-    \ {\n\n#if __cplusplus >= 201703L\n\ntemplate <class S,\n          auto op,\n\
-    \          auto e,\n          class F,\n          auto mapping,\n          auto\
-    \ composition,\n          auto id>\nstruct lazy_segtree {\n    static_assert(std::is_convertible_v<decltype(op),\
+    #include <vector>\n\n#include \"internal/bit.hpp\"\n\nnamespace e6nlaq {\n\n#if\
+    \ __cplusplus >= 201703L\n\ntemplate <class S,\n          auto op,\n         \
+    \ auto e,\n          class F,\n          auto mapping,\n          auto composition,\n\
+    \          auto id>\nstruct lazy_segtree {\n    static_assert(std::is_convertible_v<decltype(op),\
     \ std::function<S(S, S)>>,\n                  \"op must work as S(S, S)\");\n\
     \    static_assert(std::is_convertible_v<decltype(e), std::function<S()>>,\n \
     \                 \"e must work as S()\");\n    static_assert(\n        std::is_convertible_v<decltype(mapping),\
@@ -107,7 +107,7 @@ data:
   path: include/e6nlaq/lazysegtree.hpp
   requiredBy:
   - include/e6nlaq/all.hpp
-  timestamp: '2025-12-10 23:21:44+09:00'
+  timestamp: '2025-12-10 23:30:30+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: include/e6nlaq/lazysegtree.hpp

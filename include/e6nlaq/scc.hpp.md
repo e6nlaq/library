@@ -28,7 +28,7 @@ data:
     \ include/e6nlaq/scc.hpp: line 9: unable to process #include in #if / #ifdef /\
     \ #ifndef other than include guards\n"
   code: "// This file is a fork of AtCoder Library.\n\n#ifndef E6NLAQ_SCC_HPP\n#define\
-    \ E6NLAQ_SCC_HPP 1\n\n#include <cassert>\n#include <vector>\n\n#include \"e6nlaq/internal/scc.hpp\"\
+    \ E6NLAQ_SCC_HPP 1\n\n#include <cassert>\n#include <vector>\n\n#include \"internal/scc.hpp\"\
     \n\nnamespace e6nlaq {\n\nstruct scc_graph {\n   public:\n    scc_graph() : internal(0)\
     \ {}\n    explicit scc_graph(int n) : internal(n) {}\n\n    void add_edge(int\
     \ from, int to) {\n        int n = internal.num_vertices();\n        assert(0\
@@ -43,7 +43,7 @@ data:
   path: include/e6nlaq/scc.hpp
   requiredBy:
   - include/e6nlaq/all.hpp
-  timestamp: '2025-12-10 23:21:44+09:00'
+  timestamp: '2025-12-10 23:30:30+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: include/e6nlaq/scc.hpp

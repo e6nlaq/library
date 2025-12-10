@@ -26,7 +26,7 @@ data:
     \ / #ifndef other than include guards\n"
   code: "// This file is a fork of AtCoder Library.\n\n#ifndef E6NLAQ_MAXFLOW_HPP\n\
     #define E6NLAQ_MAXFLOW_HPP 1\n\n#include <algorithm>\n#include <cassert>\n#include\
-    \ <limits>\n#include <vector>\n\n#include \"e6nlaq/internal/queue.hpp\"\n\nnamespace\
+    \ <limits>\n#include <vector>\n\n#include \"internal/queue.hpp\"\n\nnamespace\
     \ e6nlaq {\n\ntemplate <class Cap>\nstruct mf_graph {\n   public:\n    mf_graph()\
     \ : _n(0) {}\n    explicit mf_graph(int n) : _n(n), g(n) {}\n\n    int add_edge(int\
     \ from, int to, Cap cap) {\n        assert(0 <= from && from < _n);\n        assert(0\
@@ -86,7 +86,7 @@ data:
   path: include/e6nlaq/maxflow.hpp
   requiredBy:
   - include/e6nlaq/all.hpp
-  timestamp: '2025-12-10 23:21:44+09:00'
+  timestamp: '2025-12-10 23:30:30+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: include/e6nlaq/maxflow.hpp

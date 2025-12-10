@@ -26,18 +26,18 @@ data:
     \ #ifdef / #ifndef other than include guards\n"
   code: "// This file is a fork of AtCoder Library.\n\n#ifndef E6NLAQ_MINCOSTFLOW_HPP\n\
     #define E6NLAQ_MINCOSTFLOW_HPP 1\n\n#include <algorithm>\n#include <cassert>\n\
-    #include <limits>\n#include <vector>\n\n#include \"e6nlaq/internal/csr.hpp\"\n\
-    \nnamespace e6nlaq {\n\ntemplate <class Cap, class Cost>\nstruct mcf_graph {\n\
-    \   public:\n    mcf_graph() {}\n    explicit mcf_graph(int n) : _n(n) {}\n\n\
-    \    int add_edge(int from, int to, Cap cap, Cost cost) {\n        assert(0 <=\
-    \ from && from < _n);\n        assert(0 <= to && to < _n);\n        assert(0 <=\
-    \ cap);\n        assert(0 <= cost);\n        int m = int(_edges.size());\n   \
-    \     _edges.push_back({from, to, cap, 0, cost});\n        return m;\n    }\n\n\
-    \    struct edge {\n        int from, to;\n        Cap cap, flow;\n        Cost\
-    \ cost;\n    };\n\n    edge get_edge(int i) {\n        int m = int(_edges.size());\n\
-    \        assert(0 <= i && i < m);\n        return _edges[i];\n    }\n    std::vector<edge>\
-    \ edges() { return _edges; }\n\n    std::pair<Cap, Cost> flow(int s, int t) {\n\
-    \        return flow(s, t, std::numeric_limits<Cap>::max());\n    }\n    std::pair<Cap,\
+    #include <limits>\n#include <vector>\n\n#include \"internal/csr.hpp\"\n\nnamespace\
+    \ e6nlaq {\n\ntemplate <class Cap, class Cost>\nstruct mcf_graph {\n   public:\n\
+    \    mcf_graph() {}\n    explicit mcf_graph(int n) : _n(n) {}\n\n    int add_edge(int\
+    \ from, int to, Cap cap, Cost cost) {\n        assert(0 <= from && from < _n);\n\
+    \        assert(0 <= to && to < _n);\n        assert(0 <= cap);\n        assert(0\
+    \ <= cost);\n        int m = int(_edges.size());\n        _edges.push_back({from,\
+    \ to, cap, 0, cost});\n        return m;\n    }\n\n    struct edge {\n       \
+    \ int from, to;\n        Cap cap, flow;\n        Cost cost;\n    };\n\n    edge\
+    \ get_edge(int i) {\n        int m = int(_edges.size());\n        assert(0 <=\
+    \ i && i < m);\n        return _edges[i];\n    }\n    std::vector<edge> edges()\
+    \ { return _edges; }\n\n    std::pair<Cap, Cost> flow(int s, int t) {\n      \
+    \  return flow(s, t, std::numeric_limits<Cap>::max());\n    }\n    std::pair<Cap,\
     \ Cost> flow(int s, int t, Cap flow_limit) {\n        return slope(s, t, flow_limit).back();\n\
     \    }\n    std::vector<std::pair<Cap, Cost>> slope(int s, int t) {\n        return\
     \ slope(s, t, std::numeric_limits<Cap>::max());\n    }\n    std::vector<std::pair<Cap,\
@@ -125,7 +125,7 @@ data:
   path: include/e6nlaq/mincostflow.hpp
   requiredBy:
   - include/e6nlaq/all.hpp
-  timestamp: '2025-12-10 23:21:44+09:00'
+  timestamp: '2025-12-10 23:30:30+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: include/e6nlaq/mincostflow.hpp

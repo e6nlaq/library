@@ -28,14 +28,14 @@ data:
     \  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
     , line 187, in bundle\n    bundler.update(path)\n  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n \
-    \ File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: e6nlaq/math/acl.hpp:\
-    \ line -1: no such header\n"
-  code: '#include "e6nlaq/math/acl.hpp"
+    \  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 400, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
+    \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
+    \ include/e6nlaq/math/acl.hpp: line 11: unable to process #include in #if / #ifdef\
+    \ / #ifndef other than include guards\n"
+  code: '#include "math/acl.hpp"
 
-    #include "e6nlaq/math/integer.hpp"'
+    #include "math/integer.hpp"'
   dependsOn:
   - include/e6nlaq/math/acl.hpp
   - include/e6nlaq/internal/math.hpp
@@ -44,7 +44,7 @@ data:
   path: include/e6nlaq/math.hpp
   requiredBy:
   - include/e6nlaq/all.hpp
-  timestamp: '2025-12-10 23:21:44+09:00'
+  timestamp: '2025-12-10 23:30:30+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: include/e6nlaq/math.hpp

@@ -29,7 +29,7 @@ data:
     \ / #ifndef other than include guards\n"
   code: "// This file is a fork of AtCoder Library.\n\n#ifndef E6NLAQ_MATH_ACL_HPP\n\
     #define E6NLAQ_MATH_ACL_HPP 1\n\n#include <algorithm>\n#include <cassert>\n#include\
-    \ <tuple>\n#include <vector>\n\n#include \"e6nlaq/internal/math.hpp\"\n\nnamespace\
+    \ <tuple>\n#include <vector>\n\n#include \"../internal/math.hpp\"\n\nnamespace\
     \ e6nlaq {\n\ninline long long pow_mod(long long x, long long n, int m) {\n  \
     \  assert(0 <= n && 1 <= m);\n    if (m == 1) return 0;\n    internal::barrett\
     \ bt((unsigned int)(m));\n    unsigned int r = 1, y = (unsigned int)(internal::safe_mod(x,\
@@ -73,7 +73,7 @@ data:
   requiredBy:
   - include/e6nlaq/math.hpp
   - include/e6nlaq/all.hpp
-  timestamp: '2025-12-10 23:21:44+09:00'
+  timestamp: '2025-12-10 23:30:30+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: include/e6nlaq/math/acl.hpp

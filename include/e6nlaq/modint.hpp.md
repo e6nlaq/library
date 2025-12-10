@@ -32,24 +32,23 @@ data:
     \ / #ifndef other than include guards\n"
   code: "// This file is a fork of AtCoder Library.\n\n#ifndef E6NLAQ_MODINT_HPP\n\
     #define E6NLAQ_MODINT_HPP 1\n\n#include <cassert>\n#include <type_traits>\n\n\
-    #include \"e6nlaq/internal/math.hpp\"\n#include \"e6nlaq/internal/type_traits.hpp\"\
-    \n\nnamespace e6nlaq {\n\nnamespace internal {\n\nstruct modint_base {};\nstruct\
-    \ static_modint_base : modint_base {};\n\ntemplate <class T>\nusing is_modint\
-    \ = std::is_base_of<modint_base, T>;\ntemplate <class T>\nusing is_modint_t =\
-    \ std::enable_if_t<is_modint<T>::value>;\n\n}  // namespace internal\n\ntemplate\
-    \ <int m, std::enable_if_t<(1 <= m)>* = nullptr>\nstruct static_modint : internal::static_modint_base\
-    \ {\n    using mint = static_modint;\n\n   public:\n    static constexpr int mod()\
-    \ { return m; }\n    static mint raw(int v) {\n        mint x;\n        x._v =\
-    \ v;\n        return x;\n    }\n\n    static_modint() : _v(0) {}\n    template\
-    \ <class T, internal::is_signed_int_t<T>* = nullptr>\n    static_modint(T v) {\n\
-    \        long long x = (long long)(v % (long long)(umod()));\n        if (x <\
-    \ 0) x += umod();\n        _v = (unsigned int)(x);\n    }\n    template <class\
-    \ T, internal::is_unsigned_int_t<T>* = nullptr>\n    static_modint(T v) {\n  \
-    \      _v = (unsigned int)(v % umod());\n    }\n\n    unsigned int val() const\
-    \ { return _v; }\n\n    mint& operator++() {\n        _v++;\n        if (_v ==\
-    \ umod()) _v = 0;\n        return *this;\n    }\n    mint& operator--() {\n  \
-    \      if (_v == 0) _v = umod();\n        _v--;\n        return *this;\n    }\n\
-    \    mint operator++(int) {\n        mint result = *this;\n        ++*this;\n\
+    #include \"internal/math.hpp\"\n#include \"internal/type_traits.hpp\"\n\nnamespace\
+    \ e6nlaq {\n\nnamespace internal {\n\nstruct modint_base {};\nstruct static_modint_base\
+    \ : modint_base {};\n\ntemplate <class T>\nusing is_modint = std::is_base_of<modint_base,\
+    \ T>;\ntemplate <class T>\nusing is_modint_t = std::enable_if_t<is_modint<T>::value>;\n\
+    \n}  // namespace internal\n\ntemplate <int m, std::enable_if_t<(1 <= m)>* = nullptr>\n\
+    struct static_modint : internal::static_modint_base {\n    using mint = static_modint;\n\
+    \n   public:\n    static constexpr int mod() { return m; }\n    static mint raw(int\
+    \ v) {\n        mint x;\n        x._v = v;\n        return x;\n    }\n\n    static_modint()\
+    \ : _v(0) {}\n    template <class T, internal::is_signed_int_t<T>* = nullptr>\n\
+    \    static_modint(T v) {\n        long long x = (long long)(v % (long long)(umod()));\n\
+    \        if (x < 0) x += umod();\n        _v = (unsigned int)(x);\n    }\n   \
+    \ template <class T, internal::is_unsigned_int_t<T>* = nullptr>\n    static_modint(T\
+    \ v) {\n        _v = (unsigned int)(v % umod());\n    }\n\n    unsigned int val()\
+    \ const { return _v; }\n\n    mint& operator++() {\n        _v++;\n        if\
+    \ (_v == umod()) _v = 0;\n        return *this;\n    }\n    mint& operator--()\
+    \ {\n        if (_v == 0) _v = umod();\n        _v--;\n        return *this;\n\
+    \    }\n    mint operator++(int) {\n        mint result = *this;\n        ++*this;\n\
     \        return result;\n    }\n    mint operator--(int) {\n        mint result\
     \ = *this;\n        --*this;\n        return result;\n    }\n\n    mint& operator+=(const\
     \ mint& rhs) {\n        _v += rhs._v;\n        if (_v >= umod()) _v -= umod();\n\
@@ -129,7 +128,7 @@ data:
   requiredBy:
   - include/e6nlaq/convolution.hpp
   - include/e6nlaq/all.hpp
-  timestamp: '2025-12-10 23:21:44+09:00'
+  timestamp: '2025-12-10 23:30:30+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: include/e6nlaq/modint.hpp

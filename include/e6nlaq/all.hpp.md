@@ -17,6 +17,12 @@ data:
     path: include/e6nlaq/internal/csr.hpp
     title: include/e6nlaq/internal/csr.hpp
   - icon: ':warning:'
+    path: include/e6nlaq/internal/csr.hpp
+    title: include/e6nlaq/internal/csr.hpp
+  - icon: ':warning:'
+    path: include/e6nlaq/internal/math.hpp
+    title: include/e6nlaq/internal/math.hpp
+  - icon: ':warning:'
     path: include/e6nlaq/internal/math.hpp
     title: include/e6nlaq/internal/math.hpp
   - icon: ':warning:'
@@ -76,34 +82,34 @@ data:
     \  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
     , line 187, in bundle\n    bundler.update(path)\n  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n \
-    \ File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: e6nlaq/convolution.hpp:\
-    \ line -1: no such header\n"
-  code: '#include "e6nlaq/convolution.hpp"
+    \  File \"/home/runner/.local/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 400, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
+    \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
+    \ include/e6nlaq/convolution.hpp: line 12: unable to process #include in #if /\
+    \ #ifdef / #ifndef other than include guards\n"
+  code: '#include "convolution.hpp"
 
-    #include "e6nlaq/dsu.hpp"
+    #include "dsu.hpp"
 
-    #include "e6nlaq/fenwicktree.hpp"
+    #include "fenwicktree.hpp"
 
-    #include "e6nlaq/lazysegtree.hpp"
+    #include "lazysegtree.hpp"
 
-    #include "e6nlaq/math.hpp"
+    #include "math.hpp"
 
-    #include "e6nlaq/maxflow.hpp"
+    #include "maxflow.hpp"
 
-    #include "e6nlaq/mincostflow.hpp"
+    #include "mincostflow.hpp"
 
-    #include "e6nlaq/modint.hpp"
+    #include "modint.hpp"
 
-    #include "e6nlaq/scc.hpp"
+    #include "scc.hpp"
 
-    #include "e6nlaq/segtree.hpp"
+    #include "segtree.hpp"
 
-    #include "e6nlaq/string.hpp"
+    #include "string.hpp"
 
-    #include "e6nlaq/twosat.hpp"
+    #include "twosat.hpp"
 
     '
   dependsOn:
@@ -117,6 +123,7 @@ data:
   - include/e6nlaq/lazysegtree.hpp
   - include/e6nlaq/math.hpp
   - include/e6nlaq/math/acl.hpp
+  - include/e6nlaq/internal/math.hpp
   - include/e6nlaq/math/integer.hpp
   - include/e6nlaq/maxflow.hpp
   - include/e6nlaq/internal/queue.hpp
@@ -124,13 +131,14 @@ data:
   - include/e6nlaq/internal/csr.hpp
   - include/e6nlaq/scc.hpp
   - include/e6nlaq/internal/scc.hpp
+  - include/e6nlaq/internal/csr.hpp
   - include/e6nlaq/segtree.hpp
   - include/e6nlaq/string.hpp
   - include/e6nlaq/twosat.hpp
   isVerificationFile: false
   path: include/e6nlaq/all.hpp
   requiredBy: []
-  timestamp: '2025-12-10 23:21:44+09:00'
+  timestamp: '2025-12-10 23:30:30+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: include/e6nlaq/all.hpp
