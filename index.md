@@ -91,11 +91,6 @@ data:
       path: include/e6nlaq/math/integer.hpp
       title: "\u7B26\u53F7\u306A\u3057\u6574\u6570\u306E\u6841\u6570\u3092\u8A08\u7B97\
         \u3057\u307E\u3059"
-  - name: .
-    pages:
-    - icon: ':warning:'
-      path: template.cpp
-      title: "T\u578B\u3092char\u578B\u306B\u5909\u63DB\u3057\u307E\u3059"
   verificationCategories:
   - name: test/verify
     pages:

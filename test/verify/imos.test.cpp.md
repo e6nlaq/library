@@ -47,7 +47,7 @@ data:
   isVerificationFile: true
   path: test/verify/imos.test.cpp
   requiredBy: []
-  timestamp: '2025-12-11 22:51:35+09:00'
+  timestamp: '2025-12-11 22:55:14+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/verify/imos.test.cpp
