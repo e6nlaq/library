@@ -518,26 +518,20 @@ data:
     \ - 1] * inv[i];\n        }\n    }\n\n    // \u4E8C\u9805\u4FC2\u6570\u8A08\u7B97\
     \n    mint COM(int n, int k) const {\n        if (n < k) return 0;\n        if\
     \ (n < 0 || k < 0) return 0;\n        return fac[n] * finv[k] * finv[n - k];\n\
-    \    }\n};\n\nclass imos {\n   private:\n    vll dat;\n\n   public:\n    imos(ll\
-    \ n, ll init = 0) : dat(n + 1, 0) {\n        add(0, n, init);\n    }\n\n    //\
-    \ [l, r) \u306B x \u3092\u52A0\u3048\u308B\n    // O(1)\n    void add(ull l, ull\
-    \ r, ll x) {\n        assert(l <= r && r <= dat.size());\n        dat[l] += x;\n\
-    \        dat[r] -= x;\n    }\n\n    // O(n)\n    vll get() const {\n        vll\
-    \ res(dat.size() - 1);\n        res[0] = dat[0];\n        arep(i, 1, res.size())\
-    \ res[i] = res[i - 1] + dat[i];\n\n        return res;\n    }\n};\n\ntemplate\
-    \ <integral T>\nstruct PrimeFact {\n    vector<T> spf;\n\n    // O(N log log N)\n\
-    \    PrimeFact(T N) { init(N); }\n\n    void init(T N) {\n        spf.assign(N\
-    \ + 1, 0);\n        for (T i = 0; i <= N; i++) spf[i] = i;\n        for (T i =\
-    \ 2; i * i <= N; i++) {\n            if (spf[i] == i) {\n                for (T\
-    \ j = i * i; j <= N; j += i) {\n                    if (spf[j] == j) {\n     \
-    \                   spf[j] = i;\n                    }\n                }\n  \
-    \          }\n        }\n    }\n\n    // O(log N)\n    map<T, T> get(T n) {\n\
-    \        assert(1 <= n && n < spf.size());\n        map<T, T> m;\n        while\
-    \ (n != 1) {\n            m[spf[n]]++;\n            n /= spf[n];\n        }\n\
-    \        return m;\n    }\n};\n\n#endif\n\n/* #endregion */\n\n/* Variables */\n\
-    \n#ifndef LIBTEST\n\nll N, M, K, Q;\nll H, W;\nstring S = \"\";\nstring dump =\
-    \ \"\";\nll codeforces_t = -1;\n\n/* Main Function */\n\nint main() {\n    return\
-    \ 0;\n}\n\n#endif\n\n/* \u6587\u5B57\u5316\u3051\u6CE8\u610F */\n"
+    \    }\n};\n\ntemplate <integral T>\nstruct PrimeFact {\n    vector<T> spf;\n\n\
+    \    // O(N log log N)\n    PrimeFact(T N) { init(N); }\n\n    void init(T N)\
+    \ {\n        spf.assign(N + 1, 0);\n        for (T i = 0; i <= N; i++) spf[i]\
+    \ = i;\n        for (T i = 2; i * i <= N; i++) {\n            if (spf[i] == i)\
+    \ {\n                for (T j = i * i; j <= N; j += i) {\n                   \
+    \ if (spf[j] == j) {\n                        spf[j] = i;\n                  \
+    \  }\n                }\n            }\n        }\n    }\n\n    // O(log N)\n\
+    \    map<T, T> get(T n) {\n        assert(1 <= n && n < spf.size());\n       \
+    \ map<T, T> m;\n        while (n != 1) {\n            m[spf[n]]++;\n         \
+    \   n /= spf[n];\n        }\n        return m;\n    }\n};\n\n#endif\n\n/* #endregion\
+    \ */\n\n/* Variables */\n\n#ifndef LIBTEST\n\nll N, M, K, Q;\nll H, W;\nstring\
+    \ S = \"\";\nstring dump = \"\";\nll codeforces_t = -1;\n\n/* Main Function */\n\
+    \nint main() {\n    return 0;\n}\n\n#endif\n\n/* \u6587\u5B57\u5316\u3051\u6CE8\
+    \u610F */\n"
   code: "/*------------------------------------------------------------\n\n\n    \
     \           Welcome to my program!\n               @x__0 / @e6nlaq\n\n       \
     \     \u3000\u3000\u2227\uFF3F\u2227        AtCoder / Codeforces  etc...\n   \
@@ -1043,31 +1037,25 @@ data:
     \ - 1] * inv[i];\n        }\n    }\n\n    // \u4E8C\u9805\u4FC2\u6570\u8A08\u7B97\
     \n    mint COM(int n, int k) const {\n        if (n < k) return 0;\n        if\
     \ (n < 0 || k < 0) return 0;\n        return fac[n] * finv[k] * finv[n - k];\n\
-    \    }\n};\n\nclass imos {\n   private:\n    vll dat;\n\n   public:\n    imos(ll\
-    \ n, ll init = 0) : dat(n + 1, 0) {\n        add(0, n, init);\n    }\n\n    //\
-    \ [l, r) \u306B x \u3092\u52A0\u3048\u308B\n    // O(1)\n    void add(ull l, ull\
-    \ r, ll x) {\n        assert(l <= r && r <= dat.size());\n        dat[l] += x;\n\
-    \        dat[r] -= x;\n    }\n\n    // O(n)\n    vll get() const {\n        vll\
-    \ res(dat.size() - 1);\n        res[0] = dat[0];\n        arep(i, 1, res.size())\
-    \ res[i] = res[i - 1] + dat[i];\n\n        return res;\n    }\n};\n\ntemplate\
-    \ <integral T>\nstruct PrimeFact {\n    vector<T> spf;\n\n    // O(N log log N)\n\
-    \    PrimeFact(T N) { init(N); }\n\n    void init(T N) {\n        spf.assign(N\
-    \ + 1, 0);\n        for (T i = 0; i <= N; i++) spf[i] = i;\n        for (T i =\
-    \ 2; i * i <= N; i++) {\n            if (spf[i] == i) {\n                for (T\
-    \ j = i * i; j <= N; j += i) {\n                    if (spf[j] == j) {\n     \
-    \                   spf[j] = i;\n                    }\n                }\n  \
-    \          }\n        }\n    }\n\n    // O(log N)\n    map<T, T> get(T n) {\n\
-    \        assert(1 <= n && n < spf.size());\n        map<T, T> m;\n        while\
-    \ (n != 1) {\n            m[spf[n]]++;\n            n /= spf[n];\n        }\n\
-    \        return m;\n    }\n};\n\n#endif\n\n/* #endregion */\n\n/* Variables */\n\
-    \n#ifndef LIBTEST\n\nll N, M, K, Q;\nll H, W;\nstring S = \"\";\nstring dump =\
-    \ \"\";\nll codeforces_t = -1;\n\n/* Main Function */\n\nint main() {\n    return\
-    \ 0;\n}\n\n#endif\n\n/* \u6587\u5B57\u5316\u3051\u6CE8\u610F */\n"
+    \    }\n};\n\ntemplate <integral T>\nstruct PrimeFact {\n    vector<T> spf;\n\n\
+    \    // O(N log log N)\n    PrimeFact(T N) { init(N); }\n\n    void init(T N)\
+    \ {\n        spf.assign(N + 1, 0);\n        for (T i = 0; i <= N; i++) spf[i]\
+    \ = i;\n        for (T i = 2; i * i <= N; i++) {\n            if (spf[i] == i)\
+    \ {\n                for (T j = i * i; j <= N; j += i) {\n                   \
+    \ if (spf[j] == j) {\n                        spf[j] = i;\n                  \
+    \  }\n                }\n            }\n        }\n    }\n\n    // O(log N)\n\
+    \    map<T, T> get(T n) {\n        assert(1 <= n && n < spf.size());\n       \
+    \ map<T, T> m;\n        while (n != 1) {\n            m[spf[n]]++;\n         \
+    \   n /= spf[n];\n        }\n        return m;\n    }\n};\n\n#endif\n\n/* #endregion\
+    \ */\n\n/* Variables */\n\n#ifndef LIBTEST\n\nll N, M, K, Q;\nll H, W;\nstring\
+    \ S = \"\";\nstring dump = \"\";\nll codeforces_t = -1;\n\n/* Main Function */\n\
+    \nint main() {\n    return 0;\n}\n\n#endif\n\n/* \u6587\u5B57\u5316\u3051\u6CE8\
+    \u610F */\n"
   dependsOn: []
   isVerificationFile: false
   path: template.cpp
   requiredBy: []
-  timestamp: '2025-12-11 00:03:52+09:00'
+  timestamp: '2025-12-11 22:51:35+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: template.cpp

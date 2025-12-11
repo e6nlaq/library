@@ -6,6 +6,9 @@ data:
     - icon: ':warning:'
       path: include/e6nlaq/all.hpp
       title: include/e6nlaq/all.hpp
+    - icon: ':heavy_check_mark:'
+      path: include/e6nlaq/concepts.hpp
+      title: include/e6nlaq/concepts.hpp
     - icon: ':warning:'
       path: include/e6nlaq/convolution.hpp
       title: include/e6nlaq/convolution.hpp
@@ -15,6 +18,9 @@ data:
     - icon: ':warning:'
       path: include/e6nlaq/fenwicktree.hpp
       title: include/e6nlaq/fenwicktree.hpp
+    - icon: ':heavy_check_mark:'
+      path: include/e6nlaq/imos.hpp
+      title: include/e6nlaq/imos.hpp
     - icon: ':warning:'
       path: include/e6nlaq/io.hpp
       title: "\u6539\u884C\u3092\u51FA\u529B\u3059\u308B"
@@ -48,6 +54,14 @@ data:
     - icon: ':warning:'
       path: include/e6nlaq/twosat.hpp
       title: include/e6nlaq/twosat.hpp
+  - name: include/e6nlaq/imos
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: include/e6nlaq/imos/imos.hpp
+      title: "imos\u6CD5\u3092\u5B9F\u88C5\u3057\u305F\u30AF\u30E9\u30B9"
+    - icon: ':warning:'
+      path: include/e6nlaq/imos/imos2d.hpp
+      title: include/e6nlaq/imos/imos2d.hpp
   - name: include/e6nlaq/internal
     pages:
     - icon: ':warning:'
@@ -86,7 +100,7 @@ data:
   - name: test/verify
     pages:
     - icon: ':heavy_check_mark:'
-      path: test/verify/example.test.cpp
-      title: test/verify/example.test.cpp
+      path: test/verify/imos.test.cpp
+      title: test/verify/imos.test.cpp
 layout: toppage
 ---

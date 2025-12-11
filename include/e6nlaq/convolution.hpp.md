@@ -568,7 +568,7 @@ data:
   path: include/e6nlaq/convolution.hpp
   requiredBy:
   - include/e6nlaq/all.hpp
-  timestamp: '2025-12-11 00:03:52+09:00'
+  timestamp: '2025-12-11 22:51:35+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: include/e6nlaq/convolution.hpp
