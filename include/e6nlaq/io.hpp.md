@@ -119,7 +119,7 @@ data:
   isVerificationFile: false
   path: include/e6nlaq/io.hpp
   requiredBy: []
-  timestamp: '2025-12-11 22:55:14+09:00'
+  timestamp: '2025-12-11 23:03:59+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: include/e6nlaq/io.hpp

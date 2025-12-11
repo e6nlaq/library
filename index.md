@@ -58,7 +58,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: include/e6nlaq/imos/imos.hpp
-      title: "imos\u6CD5\u3092\u5B9F\u88C5\u3057\u305F\u30AF\u30E9\u30B9"
+      title: "imos\u6CD5"
     - icon: ':warning:'
       path: include/e6nlaq/imos/imos2d.hpp
       title: include/e6nlaq/imos/imos2d.hpp

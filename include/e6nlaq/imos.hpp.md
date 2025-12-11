@@ -6,7 +6,7 @@ data:
     title: include/e6nlaq/concepts.hpp
   - icon: ':heavy_check_mark:'
     path: include/e6nlaq/imos/imos.hpp
-    title: "imos\u6CD5\u3092\u5B9F\u88C5\u3057\u305F\u30AF\u30E9\u30B9"
+    title: "imos\u6CD5"
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -61,7 +61,7 @@ data:
   isVerificationFile: false
   path: include/e6nlaq/imos.hpp
   requiredBy: []
-  timestamp: '2025-12-11 22:55:14+09:00'
+  timestamp: '2025-12-11 23:03:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/imos.test.cpp

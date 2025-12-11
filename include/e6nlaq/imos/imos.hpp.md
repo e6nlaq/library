@@ -94,14 +94,24 @@ data:
   path: include/e6nlaq/imos/imos.hpp
   requiredBy:
   - include/e6nlaq/imos.hpp
-  timestamp: '2025-12-11 22:55:14+09:00'
+  timestamp: '2025-12-11 23:03:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/imos.test.cpp
 documentation_of: include/e6nlaq/imos/imos.hpp
 layout: document
-redirect_from:
-- /library/include/e6nlaq/imos/imos.hpp
-- /library/include/e6nlaq/imos/imos.hpp.html
-title: "imos\u6CD5\u3092\u5B9F\u88C5\u3057\u305F\u30AF\u30E9\u30B9"
+title: "imos\u6CD5"
 ---
+
+1次元のimos法
+
+`+=`と`-=`が実装されている型`T`に対して使用できる。
+
+- `imos(std::size_t n, const T& init, const T& e)`
+  - 長さ`n`の配列を作成する。初期値は`init`で、単位元は`e`。
+- `add(std::size_t l, std::size_t r, T x)`
+  - 区間`[l, r)`に対して`x`だけ加算する。
+  - 計算量は$\mathrm{O}(1)$。
+- `get()`
+  - 累積和を計算して返す。
+  - 計算量は$\mathrm{O}(N)$。
