@@ -6,4 +6,6 @@ CXXFLAGS = [
     "-fsanitize=undefined",
     "-I",
     "/home/runner/work/library/library/include",
+    "-I",
+    "./include",
 ]
