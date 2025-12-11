@@ -1487,33 +1487,6 @@ class Combination {
     }
 };
 
-class imos {
-   private:
-    vll dat;
-
-   public:
-    imos(ll n, ll init = 0) : dat(n + 1, 0) {
-        add(0, n, init);
-    }
-
-    // [l, r) に x を加える
-    // O(1)
-    void add(ull l, ull r, ll x) {
-        assert(l <= r && r <= dat.size());
-        dat[l] += x;
-        dat[r] -= x;
-    }
-
-    // O(n)
-    vll get() const {
-        vll res(dat.size() - 1);
-        res[0] = dat[0];
-        arep(i, 1, res.size()) res[i] = res[i - 1] + dat[i];
-
-        return res;
-    }
-};
-
 template <integral T>
 struct PrimeFact {
     vector<T> spf;
