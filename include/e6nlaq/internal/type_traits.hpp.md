@@ -117,7 +117,7 @@ data:
   - include/e6nlaq/convolution.hpp
   - include/e6nlaq/modint.hpp
   - include/e6nlaq/all.hpp
-  timestamp: '2025-12-11 23:03:59+09:00'
+  timestamp: '2025-12-12 17:20:18+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: include/e6nlaq/internal/type_traits.hpp

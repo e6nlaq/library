@@ -31,7 +31,7 @@ data:
   requiredBy:
   - include/e6nlaq/imos.hpp
   - include/e6nlaq/imos/imos.hpp
-  timestamp: '2025-12-11 23:03:59+09:00'
+  timestamp: '2025-12-12 17:20:18+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/imos.test.cpp
