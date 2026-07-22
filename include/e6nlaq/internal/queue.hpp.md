@@ -36,9 +36,9 @@ data:
   isVerificationFile: false
   path: include/e6nlaq/internal/queue.hpp
   requiredBy:
-  - include/e6nlaq/maxflow.hpp
   - include/e6nlaq/all.hpp
-  timestamp: '2025-12-12 17:20:18+09:00'
+  - include/e6nlaq/maxflow.hpp
+  timestamp: '2026-05-13 04:53:35+00:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: include/e6nlaq/internal/queue.hpp

@@ -61,7 +61,7 @@ data:
   isVerificationFile: false
   path: include/e6nlaq/imos.hpp
   requiredBy: []
-  timestamp: '2025-12-12 17:20:18+09:00'
+  timestamp: '2026-05-13 04:53:35+00:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/verify/imos.test.cpp
